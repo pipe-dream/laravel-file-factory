@@ -86,52 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/templates sync recursive \\.stub$/":
-/*!*************************************!*\
-  !*** ./src/templates sync \.stub$/ ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./User.php.stub": "./src/templates/User.php.stub"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./src/templates sync recursive \\.stub$/";
-
-/***/ }),
-
-/***/ "./src/templates/User.php.stub":
-/*!*************************************!*\
-  !*** ./src/templates/User.php.stub ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("class User() {\n    //\n\n    private $prop = \"\\n\"\n    /*\n        testing strange symbols\n        /([A-Z])\\w+/\n    */    \n}");
-
-/***/ }),
-
 /***/ "./src/templates/index.js":
 /*!********************************!*\
   !*** ./src/templates/index.js ***!
@@ -141,19 +95,19 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 // Dynamically load all stubs using raw-loader (see webpack.mix.js)
-var stubs = __webpack_require__("./src/templates sync recursive \\.stub$/"); // What is this new "exports" thing ???
-
-
-exports.stubs = stubs.keys().reduce(function (result, key) {
-  return _objectSpread(_defineProperty({}, key.replace(/\.\//, '').replace(/\.stub$/, ''), stubs(key)["default"]), result);
-}, {});
+// let stubs = require.context('./', true, /\.stub$/i);
+// // What is this new "exports" thing ???
+// stubs = stubs.keys().reduce((result, key) => {
+//     return {
+//         [key.replace(/\.\//,'').replace(/\.stub$/,'')] : stubs(key).default,
+//         ...result
+//     }
+// }, {});
+// export default { /* dont remove this export default or it will break !?? */}
+//module.exports = "wohohoo" 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  /* dont remove this export default or it will break !?? */
+  "User.php": "User file content"
 });
 
 /***/ }),

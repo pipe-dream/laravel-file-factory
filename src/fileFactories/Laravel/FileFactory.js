@@ -4,11 +4,17 @@ import userSystemSketch from './sketches/userSystemSketch'
 import sampleAppSketch from './sketches/sampleAppSketch'
 import helpSketch from './sketches/helpSketch'
 import collect from 'collect.js'
+import templates from '../../templates/index.js'
+
 const pipes = require.context('./pipes', false, /\.js$/);
 
 export default class FileFactory {
     constructor(objectModelCollection) {
         this.omc = objectModelCollection
+    }
+
+    static templates() {
+        return templates
     }
 
     static pipes() {
