@@ -14,5 +14,5 @@
 //module.exports = "wohohoo" 
 
 export default {
-    "User.php": "User file content"
+    "User": "User file content"
 }

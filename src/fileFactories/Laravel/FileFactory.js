@@ -18,10 +18,10 @@ export default class FileFactory {
     }
 
     static pipes() {
-        return pipes.keys().filter(key => !key.includes('BasePipe')).map(key => pipes(key).default)
+        //return pipes.keys().filter(key => !key.includes('BasePipe')).map(key => pipes(key).default)
 
-        // return [
-        //     pipes("./UserPipe.js").default,
+        return [
+             pipes("./UserPipe.js").default,
         //     pipes("./ModelPipe.js").default,
         //     pipes("./MigrationPipe.js").default,
         //     pipes("./ControllerPipe.js").default,
@@ -29,7 +29,7 @@ export default class FileFactory {
         //     pipes("./SeederPipe.js").default,            
         //     pipes("./FactoryPipe.js").default,                        
         //     pipes("./APIRoutesPipe.js").default,            
-        // ]
+        ]
     }
 
     static defaultPreferences() {

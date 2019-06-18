@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import Parser from '../objectModel/SketchParser'
 import ObjectModelCollection from '../objectModel/ObjectModelCollection'
 import ObjectModelEntityFactory from '../objectModel/ObjectModelEntityFactory'
+import LaravelFileFactory from '../fileFactories/Laravel/FileFactory'
 const mergeJSON = require('deepmerge')
 
 Vue.use(Vuex)
@@ -18,9 +19,9 @@ export default new Vuex.Store({
             review: "",
         },
 
-        availablePipes: Config.FileFactory.pipes(),
+        availablePipes: LaravelFileFactory.pipes(),
 
-        selectedPipes: Config.FileFactory.pipes().map(pipe => pipe.name),
+        selectedPipes: LaravelFileFactory.pipes().map((key, value) => key),
 
         selectedFiles: {},
 
@@ -30,11 +31,11 @@ export default new Vuex.Store({
 
         builtFiles: [],        
 
-        templates: {},
+        templates: LaravelFileFactory.templates(),
 
         schema: {},
 
-        preferences: Config.FileFactory.defaultPreferences(),
+        preferences: LaravelFileFactory.defaultPreferences(),
     },
     mutations: {
         navigate(state, {namespace, tab}) {
@@ -127,7 +128,7 @@ export default new Vuex.Store({
             // Make deep copy of schema to detach any previous bindings
             schema = JSON.parse(JSON.stringify(schema))
 
-            let files = Config.FileFactory.from(
+            let files = LaravelFileFactory.from(
                 ObjectModelCollection.fromSchema(schema)                   
             ).withPipes(
                 context.state.availablePipes.filter(pipe => {
@@ -149,9 +150,9 @@ export default new Vuex.Store({
         },
 
         setTemplates(context) {
-            fetch('/pipe-dream/api/templates').then(result => result.json()).then(templates => 
-                context.commit('setTemplates', templates)
-            )            
+            // fetch('/pipe-dream/api/templates').then(result => result.json()).then(templates => 
+            //     context.commit('setTemplates', templates)
+            // )            
         },        
 
         setTemplate(context, file) {
