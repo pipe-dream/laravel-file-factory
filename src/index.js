@@ -1,5 +1,4 @@
-import LaravelFileFactory from './fileFactories/Laravel/FileFactory'
-import PipeDream from 'core'
+import LaravelFileFactory from './LaravelFileFactory'
 
 require('./bootstrap/extendArray')
 require('./bootstrap/assignConstants')

@@ -1,20 +1,16 @@
-import Template from '../../../utilities/Template'
+import Template from '../utilities/Template'
 import ModelPipe from './ModelPipe';
-import F from '../../../utilities/Formatter'
+import F from '../utilities/Formatter'
 
-export default class ControllerPipe extends ModelPipe {
+export default class APIControllerPipe extends ModelPipe {
     calculateFiles(omc = ObjectModelCollection) {
         return omc.modelsIncludingUser().map(model => {
             return {
-                path: "app/Http/Controllers/" + model.className() + "Controller.php",
-                content: Template.for('Controller').replace({
-                    ___HIDDEN___: this.hiddenAttributes(model),
-                    ___MODEL___: this.className(model),
+                path: "app/Http/Controllers/" + model.className() + "APIController.php",
+                content: Template.for('APIController').replace({
+                    ___MODEL___: model.className(),
                     ___MODEL_INSTANCE___: F.camelCase(model.className()),
-                    ___WITH_RELATIONSHIPS___: this.withRelationships(model),
-                    ___FILLABLE___: this.fillableAttributes(model),
-                    ___CASTS___: this.casts(model),
-                    ___RELATIONSHIP_METHODS_BLOCK___: this.relationshipMethods(model),
+                    ___WITH_RELATIONSHIPS___: this.withRelationships(model)
                 })
             }
         })
@@ -34,5 +30,5 @@ export default class ControllerPipe extends ModelPipe {
                 return F.singleQuotePad(F.camelCase(F.pluralize(target.name)))
             }),
         ].join(", ") + "])->"
-    }    
+    }
 }

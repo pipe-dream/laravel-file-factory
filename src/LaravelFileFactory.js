@@ -4,7 +4,8 @@ import userSystemSketch from './sketches/userSystemSketch'
 import sampleAppSketch from './sketches/sampleAppSketch'
 import helpSketch from './sketches/helpSketch'
 import collect from 'collect.js'
-import templates from '../../templates/index.js'
+
+import templates from './templates/compiledTemplates'
 
 const pipes = require.context('./pipes', false, /\.js$/);
 

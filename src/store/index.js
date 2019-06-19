@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import Parser from '../objectModel/SketchParser'
 import ObjectModelCollection from '../objectModel/ObjectModelCollection'
 import ObjectModelEntityFactory from '../objectModel/ObjectModelEntityFactory'
-import LaravelFileFactory from '../fileFactories/Laravel/FileFactory'
+import LaravelFileFactory from '../LaravelFileFactory'
 const mergeJSON = require('deepmerge')
 
 Vue.use(Vuex)
