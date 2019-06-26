@@ -1,5 +1,4 @@
 const mergeJSON = require('deepmerge')
-import store from '../store'
 
 export default class Preference {
     static has(path) {
@@ -11,7 +10,7 @@ export default class Preference {
             return path.reduce((data, key) => {
                 if(typeof data === 'object' && key in data) return data[key];
                 throw new ReferenceError("No such key combination")
-            }, store.getters.preferences)
+            }, window.store.getters.preferences)
 
         } catch(ReferenceError) {
             return ReferenceError

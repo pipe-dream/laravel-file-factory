@@ -1,5 +1,3 @@
-import store from '../store'
-
 export default class Template {
     constructor(text) {
         this.originalText = text
@@ -8,7 +6,7 @@ export default class Template {
 
     static for(templateName) {
         return new this(
-            store.getters.templates[templateName]
+            window.store.getters.templates[templateName]
         )
     }
 
