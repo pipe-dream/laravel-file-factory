@@ -1,4 +1,4 @@
-import Template from '../utilities/Template'
+import { Template } from 'core'
 import ModelPipe from './ModelPipe'
 import ModelEntity from '../objectModel/entities/ModelEntity'
 
