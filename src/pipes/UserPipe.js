@@ -7,7 +7,7 @@ export default class UserPipe extends ModelPipe {
         let user = omc.userModel()
         return [{
             path: "app/User.php",
-            content: Template.for('User').replace({
+            content: Template.for('User.php').replace({
                 ___HIDDEN___: this.hiddenAttributes(user),
                 ___FILLABLE___: this.fillableAttributes(user),
                 ___CASTS_BLOCK___: this.casts(user) ? this.casts(user) : "//",

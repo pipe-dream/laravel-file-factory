@@ -1,9 +1,0 @@
-class User() {   
-    //
-
-    private $prop = "\n"
-    /*
-        testing strange symbols
-        /([A-Z])\w+/
-    */    
-}

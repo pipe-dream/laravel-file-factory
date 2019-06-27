@@ -104,8 +104,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./Model.stub": "./src/templates/Model.stub",
-	"./User.stub": "./src/templates/User.stub"
+	"./User.php.stub": "./src/templates/User.php.stub"
 };
 
 
@@ -130,29 +129,16 @@ webpackContext.id = "./src/templates sync recursive \\.(stub)$";
 
 /***/ }),
 
-/***/ "./src/templates/Model.stub":
-/*!**********************************!*\
-  !*** ./src/templates/Model.stub ***!
-  \**********************************/
+/***/ "./src/templates/User.php.stub":
+/*!*************************************!*\
+  !*** ./src/templates/User.php.stub ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("aaa");
-
-/***/ }),
-
-/***/ "./src/templates/User.stub":
-/*!*********************************!*\
-  !*** ./src/templates/User.stub ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("class User() {   \n    //\n\n    private $prop = \"\\n\"\n    /*\n        testing strange symbols\n        /([A-Z])\\w+/\n    */    \n}");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\nnamespace App;\nuse Illuminate\\Notifications\\Notifiable;\nuse Illuminate\\Contracts\\Auth\\MustVerifyEmail;\nuse Illuminate\\Foundation\\Auth\\User as Authenticatable;\nclass User extends Authenticatable\n{\n    use Notifiable;\n    /**\n     * The attributes that are mass assignable.\n     *\n     * @var array\n     */\n    protected $fillable = [\n        'name', 'email', 'password',\n    ];\n    /**\n     * The attributes that should be hidden for arrays.\n     *\n     * @var array\n     */\n    protected $hidden = [\n        'password', 'remember_token',\n    ];\n    /**\n     * The attributes that should be cast to native types.\n     *\n     * @var array\n     */\n    protected $casts = [\n        'email_verified_at' => 'datetime',\n    ];\n}");
 
 /***/ }),
 
