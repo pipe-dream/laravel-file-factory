@@ -9,13 +9,35 @@ import templates from './templates/compiledTemplates'
 
 const pipes = require.context('./pipes', false, /\.js$/);
 
-export default class FileFactory {
+export default class LaravelFileFactory {
     constructor(objectModelCollection) {
         this.omc = objectModelCollection
     }
 
+    /* Idea on how to override default core modules */
+    boot() {
+        return {
+            "objectModel.AttributeFactory": SomeCustomAttributeFactory
+        }
+    }
+
     static templates() {
         return templates
+    }
+
+    static settings() {
+        return [
+            {
+                name: "Models namespace",
+                default: "App",
+                dataType: String,
+            },
+            {
+                name: "API namespace",
+                default: String.raw`App\Http\Controllers\API`,
+                dataType: String,
+            }            
+        ]
     }
 
     static pipes() {
