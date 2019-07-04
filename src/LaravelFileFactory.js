@@ -21,6 +21,9 @@ export default class LaravelFileFactory {
         return {
             // just for experiment
             SegmentRow: LaravelSegmentRow,
+            SayHi: function() {
+                console.log("Hi from laravelFileFactory-injection")
+            }
         }
     }
 
