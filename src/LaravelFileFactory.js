@@ -4,6 +4,8 @@ import userSystemSketch from './sketches/userSystemSketch'
 import sampleAppSketch from './sketches/sampleAppSketch'
 import helpSketch from './sketches/helpSketch'
 import collect from 'collect.js'
+import LaravelSegmentRow from './customModules/LaravelSegmentRow'
+
 
 import templates from './templates/compiledTemplates'
 
@@ -15,9 +17,10 @@ export default class LaravelFileFactory {
     }
 
     /* Idea on how to override default core modules */
-    boot() {
+    static overriddenModules() {
         return {
-            "objectModel.AttributeFactory": SomeCustomAttributeFactory
+            // just for experiment
+            SegmentRow: LaravelSegmentRow,
         }
     }
 
