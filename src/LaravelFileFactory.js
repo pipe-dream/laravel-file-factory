@@ -5,7 +5,7 @@ import sampleAppSketch from './sketches/sampleAppSketch'
 import helpSketch from './sketches/helpSketch'
 import collect from 'collect.js'
 import LaravelSegmentRow from './customModules/LaravelSegmentRow'
-
+import { SketchButton } from 'core'
 
 import templates from './templates/compiledTemplates'
 
@@ -34,6 +34,7 @@ export default class LaravelFileFactory {
     static buttons() {
         return [
             // here we will list the helper buttons (addUserSystem and similar)
+            SketchButton
         ]
     }
 
