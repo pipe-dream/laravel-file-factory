@@ -31,6 +31,12 @@ export default class LaravelFileFactory {
         return templates
     }
 
+    static buttons() {
+        return [
+            // here we will list the helper buttons (addUserSystem and similar)
+        ]
+    }
+
     static settings() {
         return [
             {
