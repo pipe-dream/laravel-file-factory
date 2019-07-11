@@ -1,4 +1,5 @@
 import { SketchButton } from 'core'
+import sampleAppSketch from '../../sketches/sampleAppSketch'
 
 export default class SampleAppSketchButton extends SketchButton {
     static name() {
@@ -6,6 +7,6 @@ export default class SampleAppSketchButton extends SketchButton {
     }
 
     static click() {
-        return alert("Add the sample app!")
+        window.store.dispatch('setSketch', sampleAppSketch)
     }    
 }

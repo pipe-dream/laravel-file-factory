@@ -1,10 +1,7 @@
 
 import defaultPreferences from './preferences/defaultSchema'
 import userSystemSketch from './sketches/userSystemSketch'
-import sampleAppSketch from './sketches/sampleAppSketch'
-import helpSketch from './sketches/helpSketch'
 import collect from 'collect.js'
-import LaravelSegmentRow from './customModules/LaravelSegmentRow'
 import SampleAppSketchButton from './utilities/sketchButtons/SampleApp'
 
 import templates from './templates/compiledTemplates'
@@ -14,17 +11,6 @@ const pipes = require.context('./pipes', false, /\.js$/);
 export default class LaravelFileFactory {
     constructor(objectModelCollection) {
         this.omc = objectModelCollection
-    }
-
-    /* Idea on how to override default core modules */
-    static overriddenModules() {
-        return {
-            // just for experiment
-            SegmentRow: LaravelSegmentRow,
-            SayHi: function() {
-                console.log("Hi from laravelFileFactory-injection")
-            }
-        }
     }
 
     static templates() {
@@ -73,14 +59,6 @@ export default class LaravelFileFactory {
 
     static userSystemSketch() {
         return userSystemSketch;
-    }
-    
-    static sampleApp() {
-        return sampleAppSketch;
-    }
-    
-    static helpApp() {
-        return helpSketch;
     }    
 
     static from(objectModelCollection) {
