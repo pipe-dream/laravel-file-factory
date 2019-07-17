@@ -13,6 +13,10 @@ export default class LaravelFileFactory {
         this.omc = objectModelCollection
     }
 
+    static get title() {
+        return "Laravel"
+    }
+
     static templates() {
         return templates
     }
