@@ -1,4 +1,4 @@
-import { Template } from 'core'
+import { Template } from '@pipe-dream/core'
 import ModelPipe from './ModelPipe'
 //import ModelEntity from '../objectModel/entities/ModelEntity'
 

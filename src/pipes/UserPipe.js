@@ -1,4 +1,4 @@
-import { Template } from 'core'
+import { Template } from '@pipe-dream/core'
 import ModelPipe from './ModelPipe';
 
 export default class UserPipe extends ModelPipe {
