@@ -2,4 +2,3 @@ node_modules
 .vscode
 yarn.lock
 .idea
-src/templates/compiledTemplates.js
