@@ -6,7 +6,7 @@ import SampleAppSketchButton from './utilities/sketchButtons/SampleApp'
 
 import templates from './templates/compiledTemplates'
 
-const pipes = require.context('./pipes', false, /\.js$/);
+import UserPipe from './pipes/UserPipe'
 
 export default class LaravelFileFactory {
     constructor(objectModelCollection) {
@@ -14,11 +14,15 @@ export default class LaravelFileFactory {
     }
 
     static get title() {
-        return "Laravel"
+        return "Laravel" + LaravelFileFactory.version()
     }
 
     static templates() {
         return templates
+    }
+
+    static version() {
+        return require('../package.json').version;
     }
 
     static buttons() {
@@ -43,17 +47,8 @@ export default class LaravelFileFactory {
     }
 
     static pipes() {
-        //return pipes.keys().filter(key => !key.includes('BasePipe')).map(key => pipes(key).default)
-
         return [
-             pipes("./UserPipe.js").default,
-        //     pipes("./ModelPipe.js").default,
-        //     pipes("./MigrationPipe.js").default,
-        //     pipes("./ControllerPipe.js").default,
-        //     pipes("./APIControllerPipe.js").default,
-        //     pipes("./SeederPipe.js").default,            
-        //     pipes("./FactoryPipe.js").default,                        
-        //     pipes("./APIRoutesPipe.js").default,            
+            UserPipe
         ]
     }
 
