@@ -19,6 +19,9 @@
   },
   "devDependencies": {},
   "jest": {
+    "moduleNameMapper": {
+      "^@pipe-dream/(.*)$": "<rootDir>/node_modules/@pipe-dream/$1"
+    },    
     "moduleFileExtensions": [
       "js",
       "json",
@@ -27,13 +30,19 @@
     "transform": {
       ".*\\.(js)$": "babel-jest",
       ".*\\.(vue)$": "vue-jest"
-    }
+    },
+    "testMatch": [
+      "<rootDir>/(test/**/*.js)"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@pipe-dream/core).+\\.js$"
+    ]    
   },
   "dependencies": {
     "@pipe-dream/core": "^1.0.3",
     "@vue/test-utils": "^1.0.0-beta.29",
-    "babel-core": "^6.26.3",
-    "babel-jest": "^24.8.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "change-case": "^3.1.0",
