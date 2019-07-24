@@ -14,7 +14,7 @@ export default class LaravelFileFactory {
     }
 
     static get title() {
-        return "Laravel" + LaravelFileFactory.version()
+        return "LaravelFileFactory"
     }
 
     static templates() {
