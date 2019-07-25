@@ -1,6 +1,6 @@
 {
   "name": "@pipe-dream/laravel-file-factory",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Laravel FileFactory implementation for Pipe Dream. This repo is not stand alone, it must be used together with a composer package or similar.",
   "main": "src/index.js",
   "repository": "github.com:pipe-dream/laravel-file-factory",
@@ -21,7 +21,7 @@
   "jest": {
     "moduleNameMapper": {
       "^@pipe-dream/(.*)$": "<rootDir>/node_modules/@pipe-dream/$1"
-    },    
+    },
     "moduleFileExtensions": [
       "js",
       "json",
@@ -36,7 +36,7 @@
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!@pipe-dream/core).+\\.js$"
-    ]    
+    ]
   },
   "dependencies": {
     "@pipe-dream/core": "^1.0.3",
