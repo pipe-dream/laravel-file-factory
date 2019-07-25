@@ -39,7 +39,7 @@
     ]
   },
   "dependencies": {
-    "@pipe-dream/core": "^1.0.3",
+    "@pipe-dream/core": "^1.0.4",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
