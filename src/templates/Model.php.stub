@@ -1,11 +1,12 @@
 <?php
+
 namespace App;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-class User extends Authenticatable
+
+use Illuminate\Database\Eloquent\Model;
+
+class ___CLASS_NAME___ extends Model
 {
-    use Notifiable;
+    ___SOFT_DELETES_BLOCK___
     /**
      * The attributes that are mass assignable.
      *
@@ -14,7 +15,7 @@ class User extends Authenticatable
     protected $fillable = [
         ___FILLABLE___
     ];
-    
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -23,15 +24,15 @@ class User extends Authenticatable
     protected $hidden = [
         ___HIDDEN___
     ];
-    
+
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
     protected $casts = [
-        ___CASTS___
+        ___CASTS_BLOCK___
     ];
 
-    ___RELATIONSHIP_METHODS_BLOCK___    
+    ___RELATIONSHIP_METHODS_BLOCK___
 }
