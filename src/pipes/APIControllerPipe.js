@@ -7,7 +7,7 @@ export default class APIControllerPipe extends ModelPipe {
         return omc.modelsIncludingUser().map(model => {
             return {
                 path: "app/Http/Controllers/" + model.className() + "APIController.php",
-                content: Template.for('APIController').replace({
+                content: Template.for('APIController.php').replace({
                     ___MODEL___: model.className(),
                     ___MODEL_INSTANCE___: F.camelCase(model.className()),
                     ___WITH_RELATIONSHIPS___: this.withRelationships(model)

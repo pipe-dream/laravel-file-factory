@@ -15,7 +15,7 @@ export default class FactoryPipe extends ModelPipe {
         return this.omc.modelsIncludingUser().map(model => {
             return {
                 path: "database/factories/" + model.className() + "Factory.php",
-                content: Template.for('Factory').replace({
+                content: Template.for('Factory.php').replace({
                     ___MODEL___: model.className(),
                     ___COLUMNS_BLOCK___: this.columnsBlock(model),
                 })
