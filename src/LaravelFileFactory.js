@@ -6,6 +6,13 @@ import SampleAppSketchButton from './utilities/sketchButtons/SampleApp'
 
 import templates from './templates/compiledTemplates'
 
+import APIControllerPipe from './pipes/APIControllerPipe'
+import APIRoutesPipe from './pipes/APIRoutesPipe'
+import ControllerPipe from './pipes/ControllerPipe'
+import FactoryPipe from './pipes/FactoryPipe'
+import MigrationPipe from './pipes/MigrationPipe'
+import ModelPipe from './pipes/ModelPipe'
+import SeederPipe from './pipes/SeederPipe'
 import UserPipe from './pipes/UserPipe'
 
 export default class LaravelFileFactory {
@@ -48,7 +55,14 @@ export default class LaravelFileFactory {
 
     static pipes() {
         return [
-            UserPipe
+            APIControllerPipe,
+            APIRoutesPipe,
+            ControllerPipe,
+            FactoryPipe,
+            MigrationPipe,
+            ModelPipe,
+            SeederPipe,
+            UserPipe,
         ]
     }
 

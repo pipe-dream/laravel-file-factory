@@ -7,7 +7,7 @@ export default class ControllerPipe extends ModelPipe {
         return omc.modelsIncludingUser().map(model => {
             return {
                 path: "app/Http/Controllers/" + model.className() + "Controller.php",
-                content: Template.for('Controller').replace({
+                content: Template.for('Controller.php').replace({
                     ___HIDDEN___: this.hiddenAttributes(model),
                     ___MODEL___: this.className(model),
                     ___MODEL_INSTANCE___: F.camelCase(model.className()),

@@ -6,7 +6,7 @@ export default class APIRoutesPipe extends BasePipe {
     calculateFiles() {        
         return this.omc.hasModels() ? [{
             path: "routes/api.php",
-            content: Template.for('api').replace({
+            content: Template.for('api.php').replace({
                 ___API_ROUTES_BLOCK___: this.apiRoutes(),
             })
         }] : []

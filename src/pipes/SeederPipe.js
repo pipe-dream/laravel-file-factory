@@ -1,6 +1,6 @@
 import { Template } from '@pipe-dream/core'
 import ModelPipe from './ModelPipe'
-//import ModelEntity from '../objectModel/entities/ModelEntity'
+import ModelEntity from '@pipe-dream/core/src/objectModel/entities/ModelEntity'
 
 export default class SeederPipe extends ModelPipe {
     calculateFiles(omc = ObjectModelCollection) {
@@ -14,7 +14,7 @@ export default class SeederPipe extends ModelPipe {
         return this.omc.modelsIncludingUser().map(model => {
             return {
                 path: "database/seeds/" + model.className() + "Seeder.php",
-                content: Template.for('Seeder').replace({
+                content: Template.for('Seeder.php').replace({
                     ___MODEL___: model.className(),
                 })
             }
@@ -30,7 +30,7 @@ export default class SeederPipe extends ModelPipe {
     databaseSeeder() {
         return this.omc.hasModels() ? [{
             path: "database/seeds/DatabaseSeeder.php",
-            content: Template.for('DatabaseSeeder').replace({
+            content: Template.for('DatabaseSeeder.php').replace({
                 ___DATABASE_SEEDERS_BLOCK___: this.databaseSeedersBlock()
             })
         }] : []

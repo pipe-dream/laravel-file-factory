@@ -7,7 +7,7 @@ export default class ModelPipe extends BasePipe {
         return omc.modelsExceptUser().map(model => {
             return {
                 path: "app/" + model.className() + ".php",
-                content: Template.for('Model').replace({
+                content: Template.for('Model.php').replace({
                     ___CLASS_NAME___: this.className(model),
                     ___HIDDEN___: this.hiddenAttributes(model),
                     ___FILLABLE___: this.fillableAttributes(model),

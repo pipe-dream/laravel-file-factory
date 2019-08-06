@@ -1,14 +1,14 @@
 import { Template } from '@pipe-dream/core'
 import BasePipe from './BasePipe'
 import F from '../utilities/Formatter'
-//import ModelEntity from '../objectModel/entities/ModelEntity';
+import ModelEntity from '@pipe-dream/core/src/objectModel/entities/ModelEntity'
 
 export default class MigrationPipe extends BasePipe {
     calculateFiles(omc = ObjectModelCollection) {
         return omc.inOptimalMigrationOrder().map((entity, index) => {
             return {
                 path: this.migrationFilePath(entity, index),
-                content: Template.for('Migration').replace({
+                content: Template.for('Migration.php').replace({
                     ___CLASS_NAME___: this.migrationFileClassName(entity),
                     ___TABLE___: this.tableName(entity),
                     ___COLUMNS_BLOCK___: this.columns(entity),
