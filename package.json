@@ -1,6 +1,6 @@
 {
   "name": "@pipe-dream/laravel-file-factory",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Laravel FileFactory implementation for Pipe Dream. This repo is not stand alone, it must be used together with a composer package or similar.",
   "main": "src/index.js",
   "repository": "github.com:pipe-dream/laravel-file-factory",
