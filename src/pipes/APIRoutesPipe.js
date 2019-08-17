@@ -3,6 +3,11 @@ import BasePipe from './BasePipe'
 import F from '../utilities/Formatter.js'
 
 export default class APIRoutesPipe extends BasePipe {
+
+    static get title() {
+        return 'APIRoutesPipe';
+    }
+
     calculateFiles() {        
         return this.omc.hasModels() ? [{
             path: "routes/api.php",

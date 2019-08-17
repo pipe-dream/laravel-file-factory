@@ -6,8 +6,8 @@ export default class BasePipe {
     static with(omc) {
         return new this(omc)
     }
-        
-    name() {
+
+    static get title() {
         return this.constructor.name
     }
 

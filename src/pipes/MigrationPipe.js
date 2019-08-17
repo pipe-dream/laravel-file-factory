@@ -4,6 +4,11 @@ import F from '../utilities/Formatter'
 import ModelEntity from '@pipe-dream/core/src/objectModel/entities/ModelEntity'
 
 export default class MigrationPipe extends BasePipe {
+
+    static get title() {
+        return 'MigrationPipe';
+    }
+
     calculateFiles(omc = ObjectModelCollection) {
         return omc.inOptimalMigrationOrder().map((entity, index) => {
             return {

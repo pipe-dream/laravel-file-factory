@@ -2,6 +2,11 @@ import { Template } from '@pipe-dream/core'
 import ModelPipe from './ModelPipe';
 
 export default class UserPipe extends ModelPipe {
+
+    static get title() {
+        return 'UserPipe';
+    }
+
     calculateFiles(omc = ObjectModelCollection) {
 
         if(!omc.hasUserModel()) return [];

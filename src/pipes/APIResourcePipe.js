@@ -4,6 +4,11 @@ import F from '../utilities/Formatter'
 
 
 export default class APIResourcePipe extends ModelPipe {
+
+    static get title() {
+        return 'APIResourcePipe';
+    }
+
     calculateFiles(omc = ObjectModelCollection) {
         return [
             ... this.APIResourceFiles(),

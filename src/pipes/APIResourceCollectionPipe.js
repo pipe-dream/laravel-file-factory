@@ -2,6 +2,11 @@ import { Template } from '@pipe-dream/core'
 import ModelPipe from './ModelPipe';
 
 export default class APIResourceCollectionPipe extends ModelPipe {
+
+    static get title() {
+        return 'APIResourceCollectionPipe';
+    }
+
     calculateFiles(omc = ObjectModelCollection) {
         return [
             ... this.APIResourceFiles(),

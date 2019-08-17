@@ -3,6 +3,11 @@ import ModelPipe from './ModelPipe'
 import F from '../utilities/Formatter'
 
 export default class FactoryPipe extends ModelPipe {
+
+    static get title() {
+        return 'FactoryPipe';
+    }
+
     calculateFiles(omc = ObjectModelCollection) {
         return [
             ... this.factoryFiles(),

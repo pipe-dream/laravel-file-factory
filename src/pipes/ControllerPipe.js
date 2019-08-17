@@ -3,6 +3,11 @@ import ModelPipe from './ModelPipe';
 import F from '../utilities/Formatter'
 
 export default class ControllerPipe extends ModelPipe {
+
+    static get title() {
+        return 'ControllerPipe';
+    }
+
     calculateFiles(omc = ObjectModelCollection) {
         return omc.modelsIncludingUser().map(model => {
             return {
