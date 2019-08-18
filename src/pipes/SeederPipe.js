@@ -3,6 +3,11 @@ import ModelPipe from './ModelPipe'
 import ModelEntity from '@pipe-dream/core/src/objectModel/entities/ModelEntity'
 
 export default class SeederPipe extends ModelPipe {
+
+    static get title() {
+        return 'SeederPipe';
+    }
+
     calculateFiles(omc = ObjectModelCollection) {
         return [
             ... this.seederFiles(),
