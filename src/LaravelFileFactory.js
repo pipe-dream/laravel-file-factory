@@ -4,6 +4,8 @@ import userSystemSketch from './sketches/userSystemSketch'
 import collect from 'collect.js'
 import SampleAppSketchButton from './utilities/sketchButtons/SampleApp'
 
+import Setting from '@pipe-dream/core/src/utilities/Setting'
+
 import templates from './templates/compiledTemplates'
 
 import APIControllerPipe from './pipes/APIControllerPipe'
@@ -42,16 +44,11 @@ export default class LaravelFileFactory {
 
     static settings() {
         return {
-            "namespaces": {
-                "models": {
-                    default: "App",
-                    dataType: String,
-                },
-                "api": {
-                    default: String.raw`App\Http\Controllers\API`,
-                    dataType: String,
-                }
-            }
+            namespaces: {
+                models: new Setting("App", String),
+                api: new Setting(String.raw`App\Http\Controllers\API`, String),
+            },
+            useRepositoryPattern: new Setting(true, Boolean),
         }        
     }
 
