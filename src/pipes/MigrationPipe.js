@@ -1,7 +1,6 @@
 import { Template } from '@pipe-dream/core'
 import BasePipe from './BasePipe'
 import F from '../utilities/Formatter'
-import ModelEntity from '@pipe-dream/core/src/objectModel/entities/ModelEntity'
 
 export default class MigrationPipe extends BasePipe {
 
@@ -33,11 +32,18 @@ export default class MigrationPipe extends BasePipe {
     }
 
     tableName(entity) {
-        if(!(entity instanceof ModelEntity)) {
+        if(entity.isTableEntity()) {
             return entity.name
-        }
+        }        
 
         return F.snakeCase(F.pluralize(entity.name))
+
+        /*
+            // This old implementation is now broken! Why!
+            if(!(entity instanceof ModelEntity)) {
+                return entity.name
+            }        
+        */
     }
 
     columns(entity) {
