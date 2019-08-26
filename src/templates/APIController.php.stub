@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\___MODEL___;
+use ___MODEL_NAMESPACE___\___MODEL___;
 use App\Http\Resources\___MODEL___Collection;
 use App\Http\Resources\___MODEL___Resource;
  

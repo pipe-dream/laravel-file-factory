@@ -154,7 +154,7 @@ webpackContext.id = "./src/templates sync recursive \\.(stub)$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\___MODEL___;\nuse App\\Http\\Resources\\___MODEL___Collection;\nuse App\\Http\\Resources\\___MODEL___Resource;\n \nclass ___MODEL___APIController extends Controller\n{\n    public function index()\n    {\n        return new ___MODEL___Collection(___MODEL___::paginate());\n    }\n \n    public function show(___MODEL___ $___MODEL_INSTANCE___)\n    {\n        return new ___MODEL___Resource($___MODEL_INSTANCE___->___LOAD_RELATIONSHIPS___);\n    }\n\n    public function store(Request $request)\n    {\n        return new ___MODEL___Resource(___MODEL___::create($request->all()));\n    }\n\n    public function update(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->update($request->all());\n\n        return new ___MODEL___Resource($___MODEL_INSTANCE___);\n    }\n\n    public function destroy(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->delete();\n\n        return response()->json([], \\Illuminate\\Http\\Response::HTTP_NO_CONTENT);\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace App\\Http\\Controllers;\n\nuse ___MODEL_NAMESPACE___\\___MODEL___;\nuse App\\Http\\Resources\\___MODEL___Collection;\nuse App\\Http\\Resources\\___MODEL___Resource;\n \nclass ___MODEL___APIController extends Controller\n{\n    public function index()\n    {\n        return new ___MODEL___Collection(___MODEL___::paginate());\n    }\n \n    public function show(___MODEL___ $___MODEL_INSTANCE___)\n    {\n        return new ___MODEL___Resource($___MODEL_INSTANCE___->___LOAD_RELATIONSHIPS___);\n    }\n\n    public function store(Request $request)\n    {\n        return new ___MODEL___Resource(___MODEL___::create($request->all()));\n    }\n\n    public function update(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->update($request->all());\n\n        return new ___MODEL___Resource($___MODEL_INSTANCE___);\n    }\n\n    public function destroy(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->delete();\n\n        return response()->json([], \\Illuminate\\Http\\Response::HTTP_NO_CONTENT);\n    }\n}\n");
 
 /***/ }),
 
@@ -206,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS_PLURAL___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->belongsToMany(\\App\\___TARGET_CLASS___::class);\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS_PLURAL___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->belongsToMany(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\n}\n");
 
 /***/ }),
 
@@ -219,7 +219,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->belongsTo(\\App\\___TARGET_CLASS___::class);\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->belongsTo(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\n}\n");
 
 /***/ }),
 
@@ -258,7 +258,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\n/** @var \\Illuminate\\Database\\Eloquent\\Factory $factory */\nuse App\\___MODEL___;\nuse Illuminate\\Support\\Str;\nuse Faker\\Generator as Faker;\nuse Carbon\\Carbon;\n\n/*\n|--------------------------------------------------------------------------\n| Model Factories\n|--------------------------------------------------------------------------\n|\n| This directory should contain each of the model factory definitions for\n| your application. Factories provide a convenient way to generate new\n| model instances for testing / seeding your application's database.\n|\n*/\n\n$factory->define(___MODEL___::class, function (Faker $faker) {\n    return [\n        ___COLUMNS_BLOCK___\n    ];\n});\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\n/** @var \\Illuminate\\Database\\Eloquent\\Factory $factory */\nuse ___MODEL_NAMESPACE___\\___MODEL___;\nuse Illuminate\\Support\\Str;\nuse Faker\\Generator as Faker;\nuse Carbon\\Carbon;\n\n/*\n|--------------------------------------------------------------------------\n| Model Factories\n|--------------------------------------------------------------------------\n|\n| This directory should contain each of the model factory definitions for\n| your application. Factories provide a convenient way to generate new\n| model instances for testing / seeding your application's database.\n|\n*/\n\n$factory->define(___MODEL___::class, function (Faker $faker) {\n    return [\n        ___COLUMNS_BLOCK___\n    ];\n});\n");
 
 /***/ }),
 
@@ -271,7 +271,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS_PLURAL___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->hasMany(\\App\\___TARGET_CLASS___::class);\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS_PLURAL___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->hasMany(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\n}\n");
 
 /***/ }),
 
@@ -284,7 +284,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->hasOne(\\App\\___TARGET_CLASS___::class);\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->hasOne(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\n}\n");
 
 /***/ }),
 
@@ -310,7 +310,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace App;\n\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass ___CLASS_NAME___ extends Model\n{\n    ___SOFT_DELETES_BLOCK___\n    /**\n     * The attributes that are mass assignable.\n     *\n     * @var array\n     */\n    protected $fillable = [\n        ___FILLABLE___\n    ];\n\n    /**\n     * The attributes that should be hidden for arrays.\n     *\n     * @var array\n     */\n    protected $hidden = [\n        ___HIDDEN___\n    ];\n\n    /**\n     * The attributes that should be cast to native types.\n     *\n     * @var array\n     */\n    protected $casts = [\n        ___CASTS_BLOCK___\n    ];\n\n    ___RELATIONSHIP_METHODS_BLOCK___\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace ___MODEL_NAMESPACE___;\n\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass ___CLASS_NAME___ extends Model\n{\n    ___SOFT_DELETES_BLOCK___\n    /**\n     * The attributes that are mass assignable.\n     *\n     * @var array\n     */\n    protected $fillable = [\n        ___FILLABLE___\n    ];\n\n    /**\n     * The attributes that should be hidden for arrays.\n     *\n     * @var array\n     */\n    protected $hidden = [\n        ___HIDDEN___\n    ];\n\n    /**\n     * The attributes that should be cast to native types.\n     *\n     * @var array\n     */\n    protected $casts = [\n        ___CASTS_BLOCK___\n    ];\n\n    ___RELATIONSHIP_METHODS_BLOCK___\n}\n");
 
 /***/ }),
 
@@ -336,7 +336,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace App;\n\nuse Illuminate\\Notifications\\Notifiable;\nuse Illuminate\\Contracts\\Auth\\MustVerifyEmail;\nuse Illuminate\\Foundation\\Auth\\User as Authenticatable;\n\nclass User extends Authenticatable\n{\n    use Notifiable;\n\n    /**\n     * The attributes that are mass assignable.\n     *\n     * @var array\n     */\n    protected $fillable = [\n        ___FILLABLE___\n    ];\n\n    /**\n     * The attributes that should be hidden for arrays.\n     *\n     * @var array\n     */\n    protected $hidden = [\n        ___HIDDEN___\n    ];\n\n    /**\n     * The attributes that should be cast to native types.\n     *\n     * @var array\n     */\n    protected $casts = [\n        ___CASTS_BLOCK___\n    ];\n\n    ___RELATIONSHIP_METHODS_BLOCK___\n}");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace ___MODEL_NAMESPACE___;\n\nuse Illuminate\\Notifications\\Notifiable;\nuse Illuminate\\Contracts\\Auth\\MustVerifyEmail;\nuse Illuminate\\Foundation\\Auth\\User as Authenticatable;\n\nclass User extends Authenticatable\n{\n    use Notifiable;\n\n    /**\n     * The attributes that are mass assignable.\n     *\n     * @var array\n     */\n    protected $fillable = [\n        ___FILLABLE___\n    ];\n\n    /**\n     * The attributes that should be hidden for arrays.\n     *\n     * @var array\n     */\n    protected $hidden = [\n        ___HIDDEN___\n    ];\n\n    /**\n     * The attributes that should be cast to native types.\n     *\n     * @var array\n     */\n    protected $casts = [\n        ___CASTS_BLOCK___\n    ];\n\n    ___RELATIONSHIP_METHODS_BLOCK___\n}");
 
 /***/ }),
 

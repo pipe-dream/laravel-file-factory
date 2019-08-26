@@ -21,6 +21,7 @@ export default class FactoryPipe extends ModelPipe {
                 content: Template.for('Factory.php').replace({
                     ___MODEL___: model.className(),
                     ___COLUMNS_BLOCK___: this.columnsBlock(model),
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
                 })
             }
         })

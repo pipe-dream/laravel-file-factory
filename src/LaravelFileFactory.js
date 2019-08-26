@@ -44,9 +44,28 @@ export default class LaravelFileFactory {
 
     static settings() {
         return [
-            new Setting("Model namespace", "App", String),
-            new Setting("API Controller namespace", String.raw`App\Http\Controllers\API`, String),
-        ]        
+            {
+                name: "Model path",
+                value: "app",
+                dataType: String,
+            },
+            {
+                name: "Model namespace",
+                value: "App",
+                dataType: String,
+            },            
+            {
+                name: "API namespace",
+                value: String.raw`App\Http\Controllers\API`,
+                dataType: String,
+            },
+            {
+                name: "API path",
+                value: String.raw`app/Http/Controllers/API`,
+                dataType: String,
+            }            
+
+        ]
     }
 
     static pipes() {
