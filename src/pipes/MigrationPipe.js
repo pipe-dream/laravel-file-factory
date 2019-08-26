@@ -17,7 +17,8 @@ export default class MigrationPipe extends BasePipe {
                     ___CLASS_NAME___: this.migrationFileClassName(entity),
                     ___TABLE___: this.tableName(entity),
                     ___COLUMNS_BLOCK___: this.columns(entity),
-                    ___SOFT_DELETES_BLOCK___: entity.softdeletes ? "$table->softDeletes();" : ""
+                    ___SOFT_DELETES_BLOCK___: entity.softdeletes ? "$table->softDeletes();" : "",
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
                 })
             }
         })

@@ -20,6 +20,7 @@ export default class ControllerPipe extends ModelPipe {
                     ___FILLABLE___: this.fillableAttributes(model),
                     ___CASTS___: this.casts(model),
                     ___RELATIONSHIP_METHODS_BLOCK___: this.relationshipMethods(model),
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
                 })
             }
         })

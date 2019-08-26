@@ -22,6 +22,7 @@ export default class APIResourcePipe extends ModelPipe {
                 content: Template.for('APIResource.php').replace({
                     ___COLUMNS_BLOCK___: this.columnsBlock(model),
                     ___MODEL___: this.className(model),
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
                 })
             }
         })
