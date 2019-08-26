@@ -4,6 +4,8 @@ import userSystemSketch from './sketches/userSystemSketch'
 import collect from 'collect.js'
 import SampleAppSketchButton from './utilities/sketchButtons/SampleApp'
 
+import Setting from '@pipe-dream/core/src/utilities/Setting'
+
 import templates from './templates/compiledTemplates'
 
 import APIControllerPipe from './pipes/APIControllerPipe'
