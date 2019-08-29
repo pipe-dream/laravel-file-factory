@@ -8,7 +8,7 @@ export default class APIControllerPipe extends ModelPipe {
         return 'APIControllerPipe';
     }
 
-    calculateFiles(omc = ObjectModelCollection) {
+    calculateFiles(omc) {
         return omc.modelsIncludingUser().map(model => {
             return {
                 path: "app/Http/Controllers/" + model.className() + "APIController.php",
