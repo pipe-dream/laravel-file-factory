@@ -1,6 +1,6 @@
 import { Template } from '@pipe-dream/core'
 import ModelPipe from './ModelPipe'
-import ModelEntity from '@pipe-dream/core/src/objectModel/entities/ModelEntity'
+import {ModelEntity} from '@pipe-dream/core'
 
 export default class SeederPipe extends ModelPipe {
 
@@ -44,6 +44,6 @@ export default class SeederPipe extends ModelPipe {
     databaseSeedersBlock() {
         return this.omc.inOptimalMigrationOrder().filter(entity => (entity instanceof ModelEntity)).map(model => {
             return "$this->call(" + model.className() + "Seeder::class);"
-        }).join(___SINGLE_LINE_BREAK___)        
+        }).join(___SINGLE_LINE_BREAK___)
     }
 }
