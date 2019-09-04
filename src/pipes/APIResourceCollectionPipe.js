@@ -19,6 +19,7 @@ export default class APIResourceCollectionPipe extends ModelPipe {
                 path: "app/Http/Resources/" + model.className() + "Collection.php",
                 content: Template.for('APIResourceCollection.php').replace({
                     ___MODEL___: this.className(model),
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
                 })
             }
         })

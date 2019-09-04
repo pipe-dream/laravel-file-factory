@@ -17,7 +17,8 @@ export default class MigrationPipe extends BasePipe {
                     ___CLASS_NAME___: this.migrationFileClassName(entity),
                     ___TABLE___: this.tableName(entity),
                     ___COLUMNS_BLOCK___: this.columns(entity),
-                    ___SOFT_DELETES_BLOCK___: entity.softdeletes ? "$table->softDeletes();" : ""
+                    ___SOFT_DELETES_BLOCK___: entity.softdeletes ? "$table->softDeletes();" : "",
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
                 })
             }
         })
@@ -32,11 +33,18 @@ export default class MigrationPipe extends BasePipe {
     }
 
     tableName(entity) {
-        if(!(entity instanceof ModelEntity)) {
+        if(entity.isTableEntity()) {
             return entity.name
-        }
+        }        
 
         return F.snakeCase(F.pluralize(entity.name))
+
+        /*
+            // This old implementation is now broken! Why!
+            if(!(entity instanceof ModelEntity)) {
+                return entity.name
+            }        
+        */
     }
 
     columns(entity) {

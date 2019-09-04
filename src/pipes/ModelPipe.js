@@ -11,14 +11,15 @@ export default class ModelPipe extends BasePipe {
     calculateFiles(omc = ObjectModelCollection) {
         return omc.modelsExceptUser().map(model => {
             return {
-                path: "app/" + model.className() + ".php",
+                path: this.modelPath() + "/" + model.className() + ".php",
                 content: Template.for('Model.php').replace({
                     ___CLASS_NAME___: this.className(model),
                     ___HIDDEN___: this.hiddenAttributes(model),
                     ___FILLABLE___: this.fillableAttributes(model),
                     ___CASTS_BLOCK___: this.casts(model) ? this.casts(model) : "//",
                     ___RELATIONSHIP_METHODS_BLOCK___: this.relationshipMethods(model),
-                    ___SOFT_DELETES_BLOCK___ : this.softDeletes(model) ? "use \\Illuminate\\Database\\Eloquent\\SoftDeletes;" : ""
+                    ___SOFT_DELETES_BLOCK___ : this.softDeletes(model) ? "use \\Illuminate\\Database\\Eloquent\\SoftDeletes;" : "",
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
                 })
             }
         })

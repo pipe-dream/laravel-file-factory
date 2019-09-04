@@ -21,6 +21,7 @@ export default class SeederPipe extends ModelPipe {
                 path: "database/seeds/" + model.className() + "Seeder.php",
                 content: Template.for('Seeder.php').replace({
                     ___MODEL___: model.className(),
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
                 })
             }
         }).concat(

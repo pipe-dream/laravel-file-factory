@@ -18,4 +18,12 @@ export default class BasePipe {
 
         return result ? result : defaultValue
     }
+
+    modelPath() {
+        return window.store.getters.settings['LaravelFileFactory']['Model path']['value']        
+    }
+
+    modelNamespace() {
+        return window.store.getters.settings['LaravelFileFactory']['Model namespace']['value']        
+    }    
 }
