@@ -30,9 +30,9 @@ export default class APIResourcePipe extends ModelPipe {
 
     columnsBlock(model) {
         return model.attributes.filter(attribute => {
-            return !['password', 'remember_token'].includes(attribute.name)
+            return !['password', 'remember_token'].includes(attribute.properties.name)
         }).map(attribute => {
-            return F.singleQuotePad(attribute.name) + " => $this->" + attribute.name
+            return F.singleQuotePad(attribute.properties.name) + " => $this->" + attribute.properties.name
         }).concat(model.relationships.hasMany.concat(model.relationships.belongsToMany).map(target => {
             return F.singleQuotePad(F.snakeCase(F.pluralize(target.name))) + " => new " + F.pascalCase(target.name) + "Collection($this->whenLoaded(" + F.singleQuotePad(F.snakeCase(F.pluralize(target.name))) + "))"
         })).concat(model.relationships.belongsTo.map(target => {
