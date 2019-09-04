@@ -1,6 +1,7 @@
 import { Template } from '@pipe-dream/core'
 import BasePipe from './BasePipe'
 import F from '../utilities/Formatter'
+import {ModelEntity} from '@pipe-dream/core'
 
 export default class MigrationPipe extends BasePipe {
 

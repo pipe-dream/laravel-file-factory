@@ -31,7 +31,7 @@ export default class APIControllerPipe extends ModelPipe {
             ... model.relationships.belongsTo.map(target => {
                 return F.singleQuotePad(F.camelCase(target.name))
             }),
-            
+
             ... model.relationships.belongsToMany.map(target => {
                 return F.singleQuotePad(F.camelCase(F.pluralize(target.name)))
             }),
