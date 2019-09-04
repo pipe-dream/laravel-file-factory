@@ -29,9 +29,9 @@ export default class FactoryPipe extends ModelPipe {
 
     columnsBlock(model) {
         return model.attributes.filter(attribute => {
-            return !['id', 'created_at', 'updated_at'].includes(attribute.name)
+            return !['id', 'created_at', 'updated_at'].includes(attribute.properties.name)
         }).map(attribute => {
-            return F.singleQuotePad(attribute.name) + " => " + this.seedStatement(attribute)
+            return F.singleQuotePad(attribute.properties.name) + " => " + this.seedStatement(attribute)
         }).join(",\n")
     }
 
@@ -126,17 +126,17 @@ export default class FactoryPipe extends ModelPipe {
         }
 
         /* The seeds assumes related models are available with ID in range [1,10] */
-        if (attribute.foreign) {
+        if (attribute.properties.foreign) {
              return "random_int(1, 10)";
         }
 
-        if (!(attribute.dataType in typeMap)) return "BAD_DATATYPE";
+        if (!(attribute.properties.dataType in typeMap)) return "BAD_DATATYPE";
 
-        if (attribute.name in typeMap[attribute.dataType]) {
-            return typeMap[attribute.dataType][attribute.name]
+        if (attribute.properties.name in typeMap[attribute.properties.dataType]) {
+            return typeMap[attribute.properties.dataType][attribute.properties.name]
         }
 
-        return typeMap[attribute.dataType].default
+        return typeMap[attribute.properties.dataType].default
 
     }
 

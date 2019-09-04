@@ -54,23 +54,24 @@ export default class MigrationPipe extends BasePipe {
     }
 
     statementsFor(attribute) {
+        console.log(attribute.properties)
         return [
-            `$table->${attribute.dataType}('${attribute.name}')${this.chainings(attribute)};`,
+            `$table->${attribute.properties.dataType}('${attribute.properties.name}')${this.chainings(attribute)};`,
             ... this.addForeignKeyConstraintFor(attribute)
         ].join(___SINGLE_LINE_BREAK___)
     }
 
     addForeignKeyConstraintFor(attribute) {
-        return attribute.foreign ? [
-            `$table->foreign('${attribute.name}')->references('id')->on('${attribute.foreign}');`
+        return attribute.properties.foreign ? [
+            `$table->foreign('${attribute.properties.name}')->references('id')->on('${attribute.properties.foreign}');`
         ] : [];
     }
 
     chainings(attribute) {
         let chainings = ""
-        if(attribute.index) chainings += "->index()";
-        if(attribute.nullable || attribute.dataType === "timestamp") chainings += "->nullable()";
-        if(attribute.unique) chainings += "->unique()";
+        if(attribute.properties.index) chainings += "->index()";
+        if(attribute.properties.nullable || attribute.properties.dataType === "timestamp") chainings += "->nullable()";
+        if(attribute.properties.unique) chainings += "->unique()";
         return chainings
     }
 

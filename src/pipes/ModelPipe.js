@@ -31,16 +31,16 @@ export default class ModelPipe extends BasePipe {
 
     hiddenAttributes(model) {
         return this.horisontalStringList(
-            model.attributes.filter(attribute => attribute.hidden)
-                .map(attribute => attribute.name),
+            model.attributes.filter(attribute => attribute.properties.hidden)
+                .map(attribute => attribute.properties.name),
             "//" // default value
         )
     }
 
     fillableAttributes(model) {
         return this.horisontalStringList(
-            model.attributes.filter(attribute => attribute.fillable)
-                .map(attribute => attribute.name),
+            model.attributes.filter(attribute => attribute.properties.fillable)
+                .map(attribute => attribute.properties.name),
             "//" // default value
         )
     }
@@ -69,12 +69,12 @@ export default class ModelPipe extends BasePipe {
         }
 
         model.attributes.forEach(attribute => {
-            if(attribute.cast === null && dataTypeCasts[attribute.dataType])
-                attribute.cast = dataTypeCasts[attribute.dataType]
+            if(attribute.properties.cast === null && dataTypeCasts[attribute.properties.dataType])
+                attribute.properties.cast = dataTypeCasts[attribute.properties.dataType]
         })
 
-        return model.attributes.filter(attribute => attribute.cast)
-            .map(attribute => "'" + attribute.name + "' => '" + attribute.cast + "'")
+        return model.attributes.filter(attribute => attribute.properties.cast)
+            .map(attribute => "'" + attribute.properties.name + "' => '" + attribute.properties.cast + "'")
             .join(",\n")
 
     }
