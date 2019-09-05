@@ -54,7 +54,6 @@ export default class MigrationPipe extends BasePipe {
     }
 
     statementsFor(attribute) {
-        console.log(attribute.properties)
         return [
             `$table->${attribute.properties.dataType}('${attribute.properties.name}')${this.chainings(attribute)};`,
             ... this.addForeignKeyConstraintFor(attribute)
