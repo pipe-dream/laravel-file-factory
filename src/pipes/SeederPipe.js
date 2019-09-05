@@ -43,7 +43,7 @@ export default class SeederPipe extends ModelPipe {
     }
 
     databaseSeedersBlock() {
-        return this.omc.inOptimalMigrationOrder().filter(entity => (entity instanceof ModelEntity)).map(model => {
+        return this.omc.inOptimalMigrationOrder().filter(entity => (entity.isUserEntity() || entity.isModelEntity())).map(model => {
             return "$this->call(" + model.className() + "Seeder::class);"
         }).join(___SINGLE_LINE_BREAK___)
     }
