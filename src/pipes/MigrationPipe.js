@@ -33,7 +33,7 @@ export default class MigrationPipe extends BasePipe {
     }
 
     tableName(entity) {
-        if(entity.isTableEntity()) {
+        if(entity.name[0] === entity.name[0].toLowerCase()) {
             return entity.name
         }        
 
