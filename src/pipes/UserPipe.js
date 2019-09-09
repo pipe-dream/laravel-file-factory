@@ -20,6 +20,7 @@ export default class UserPipe extends ModelPipe {
                 ___CASTS_BLOCK___: this.casts(user) ? this.casts(user) : "//",
                 ___RELATIONSHIP_METHODS_BLOCK___: this.relationshipMethods(user),
                 ___MODEL_NAMESPACE___: this.modelNamespace(),
+                ___DATES___: this.dates(user)
             })
         }]
     }
