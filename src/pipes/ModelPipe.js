@@ -1,4 +1,4 @@
-import { Template } from '@pipe-dream/core'
+import {Template} from '@pipe-dream/core'
 import BasePipe from './BasePipe'
 import F from '../utilities/Formatter'
 
@@ -15,17 +15,35 @@ export default class ModelPipe extends BasePipe {
                 content: Template.for('Model.php').replace({
                     ___CLASS_NAME___: this.className(model),
                     ___HIDDEN___: this.hiddenAttributes(model),
-                    ___FILLABLE___: this.fillableAttributes(model),
+                    ___FILLABLE___: this.fillableAttributesWithoutDates(model),
                     ___CASTS_BLOCK___: this.casts(model) ? this.casts(model) : "//",
                     ___RELATIONSHIP_METHODS_BLOCK___: this.relationshipMethods(model),
-                    ___SOFT_DELETES_BLOCK___ : this.softDeletes(model) ? "use \\Illuminate\\Database\\Eloquent\\SoftDeletes;" : "",
-                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
+                    ___SOFT_DELETES_BLOCK___: this.softDeletes(model) ? "use \\Illuminate\\Database\\Eloquent\\SoftDeletes;" : "",
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),
+                    ___DATES___: this.dates(model)
                 })
             }
         })
     }
 
-    softDeletes(model){
+    fillableAttributesWithoutDates(model) {
+        return this.horisontalStringList(
+            model.attributes.filter(attribute => attribute.properties.dataType !== "timestamp")
+                .map(attribute => attribute.properties.name),
+            ""
+        )
+    }
+
+    dates(model) {
+        let dateTypes = ["datetime", "date", "timestamp"];
+        return this.horisontalStringList(
+            model.attributes.filter(attribute => dateTypes.includes(attribute.properties.dataType))
+                .map(attribute => attribute.properties.name),
+            ""
+        )
+    }
+
+    softDeletes(model) {
         return model.softdeletes
     }
 
@@ -48,28 +66,22 @@ export default class ModelPipe extends BasePipe {
     casts(model) {
 
         const dataTypeCasts = {
-            'int' : 'integer',
-            'integer' : 'integer',
-            'real' : 'real',
-            'float' : 'float',
-            'double' : 'double',
+            'int': 'integer',
+            'integer': 'integer',
+            'real': 'real',
+            'float': 'float',
+            'double': 'double',
 
-            'string' : 'string',
+            'bit': 'boolean',
+            'boolean': 'boolean',
 
-            'bit' : 'boolean',
-            'boolean' : 'boolean',
-
-            'date' : 'date',
-            'datetime' : 'datetime',
-            'timestamp' : 'timestamp',
-
-            'array' : 'array',
-            'json' : 'object',
-            'collection' : 'collection'
+            'array': 'array',
+            'json': 'object',
+            'collection': 'collection'
         }
 
         model.attributes.forEach(attribute => {
-            if(attribute.properties.cast === null && dataTypeCasts[attribute.properties.dataType])
+            if (attribute.properties.cast === null && dataTypeCasts[attribute.properties.dataType])
                 attribute.properties.cast = dataTypeCasts[attribute.properties.dataType]
         })
 
