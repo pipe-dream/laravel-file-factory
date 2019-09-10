@@ -1,6 +1,6 @@
-import { Template } from '@pipe-dream/core'
+import { Template } from '@pipe-dream/core/dist/pipe-dream.js'
 import ModelPipe from './ModelPipe'
-import {ModelEntity} from '@pipe-dream/core'
+import {ModelEntity} from '@pipe-dream/core/dist/pipe-dream.js'
 
 export default class SeederPipe extends ModelPipe {
 

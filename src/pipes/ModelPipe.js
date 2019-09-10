@@ -1,4 +1,4 @@
-import {Template} from '@pipe-dream/core'
+import { Template } from '@pipe-dream/core/dist/pipe-dream.js'
 import BasePipe from './BasePipe'
 import F from '../utilities/Formatter'
 

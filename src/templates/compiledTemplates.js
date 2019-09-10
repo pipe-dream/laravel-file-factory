@@ -154,7 +154,7 @@ webpackContext.id = "./src/templates sync recursive \\.(stub)$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nnamespace App\\Http\\Controllers;\r\n\r\nuse ___MODEL_NAMESPACE___\\___MODEL___;\r\nuse App\\Http\\Resources\\___MODEL___Collection;\r\nuse App\\Http\\Resources\\___MODEL___Resource;\r\n \r\nclass ___MODEL___APIController extends Controller\r\n{\r\n    public function index()\r\n    {\r\n        return new ___MODEL___Collection(___MODEL___::paginate());\r\n    }\r\n \r\n    public function show(___MODEL___ $___MODEL_INSTANCE___)\r\n    {\r\n        return new ___MODEL___Resource($___MODEL_INSTANCE___->___LOAD_RELATIONSHIPS___);\r\n    }\r\n\r\n    public function store(Request $request)\r\n    {\r\n        return new ___MODEL___Resource(___MODEL___::create($request->all()));\r\n    }\r\n\r\n    public function update(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\r\n    {\r\n        $___MODEL_INSTANCE___->update($request->all());\r\n\r\n        return new ___MODEL___Resource($___MODEL_INSTANCE___);\r\n    }\r\n\r\n    public function destroy(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\r\n    {\r\n        $___MODEL_INSTANCE___->delete();\r\n\r\n        return response()->json([], \\Illuminate\\Http\\Response::HTTP_NO_CONTENT);\r\n    }\r\n}\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace App\\Http\\Controllers;\n\nuse ___MODEL_NAMESPACE___\\___MODEL___;\nuse App\\Http\\Resources\\___MODEL___Collection;\nuse App\\Http\\Resources\\___MODEL___Resource;\n \nclass ___MODEL___APIController extends Controller\n{\n    public function index()\n    {\n        return new ___MODEL___Collection(___MODEL___::paginate());\n    }\n \n    public function show(___MODEL___ $___MODEL_INSTANCE___)\n    {\n        return new ___MODEL___Resource($___MODEL_INSTANCE___->___LOAD_RELATIONSHIPS___);\n    }\n\n    public function store(Request $request)\n    {\n        return new ___MODEL___Resource(___MODEL___::create($request->all()));\n    }\n\n    public function update(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->update($request->all());\n\n        return new ___MODEL___Resource($___MODEL_INSTANCE___);\n    }\n\n    public function destroy(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->delete();\n\n        return response()->json([], \\Illuminate\\Http\\Response::HTTP_NO_CONTENT);\n    }\n}\n");
 
 /***/ }),
 
@@ -167,7 +167,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nnamespace App\\Http\\Resources;\r\n\r\nuse Illuminate\\Http\\Resources\\Json\\JsonResource;\r\n\r\nclass ___MODEL___Resource extends JsonResource\r\n{\r\n    /**\r\n     * Transform the resource into an array.\r\n     *\r\n     * @param  \\Illuminate\\Http\\Request  $request\r\n     * @return array\r\n     */\r\n    public function toArray($request)\r\n    {\r\n        return [\r\n            ___COLUMNS_BLOCK___\r\n        ];\r\n    }\r\n}\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace App\\Http\\Resources;\n\nuse Illuminate\\Http\\Resources\\Json\\JsonResource;\n\nclass ___MODEL___Resource extends JsonResource\n{\n    /**\n     * Transform the resource into an array.\n     *\n     * @param  \\Illuminate\\Http\\Request  $request\n     * @return array\n     */\n    public function toArray($request)\n    {\n        return [\n            ___COLUMNS_BLOCK___\n        ];\n    }\n}\n");
 
 /***/ }),
 
@@ -180,7 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nnamespace App\\Http\\Resources;\r\n\r\nuse Illuminate\\Http\\Resources\\Json\\JsonResource;\r\n\r\nclass ___MODEL___Collection extends JsonResource\r\n{\r\n    /**\r\n     * Transform the resource into an array.\r\n     *\r\n     * @param  \\Illuminate\\Http\\Request  $request\r\n     * @return array\r\n     */\r\n    public function toArray($request)\r\n    {\r\n        return parent::toArray($request);\r\n    }\r\n}\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace App\\Http\\Resources;\n\nuse Illuminate\\Http\\Resources\\Json\\JsonResource;\n\nclass ___MODEL___Collection extends JsonResource\n{\n    /**\n     * Transform the resource into an array.\n     *\n     * @param  \\Illuminate\\Http\\Request  $request\n     * @return array\n     */\n    public function toArray($request)\n    {\n        return parent::toArray($request);\n    }\n}\n");
 
 /***/ }),
 
@@ -193,7 +193,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("Route::resource('___RESOURCE_NAME___', '___MODEL_NAME___APIController', [\r\n    'only' => ['index', 'show', 'store', 'update', 'destroy']\r\n]);");
+/* harmony default export */ __webpack_exports__["default"] = ("Route::resource('___RESOURCE_NAME___', '___MODEL_NAME___APIController', [\n    'only' => ['index', 'show', 'store', 'update', 'destroy']\n]);");
 
 /***/ }),
 
@@ -206,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/**\r\n * Get the ___TARGET_CLASS_PLURAL___ for the ___THIS_CLASS___.\r\n */\r\npublic function ___METHOD_NAME___()\r\n{\r\n    return $this->belongsToMany(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\r\n}\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS_PLURAL___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->belongsToMany(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\n}\n");
 
 /***/ }),
 
@@ -219,7 +219,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/**\r\n * Get the ___TARGET_CLASS___ for the ___THIS_CLASS___.\r\n */\r\npublic function ___METHOD_NAME___()\r\n{\r\n    return $this->belongsTo(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\r\n}\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->belongsTo(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\n}\n");
 
 /***/ }),
 
@@ -232,7 +232,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nnamespace App\\Http\\Controllers;\r\n\r\nuse Illuminate\\Foundation\\Bus\\DispatchesJobs;\r\nuse Illuminate\\Routing\\Controller as BaseController;\r\nuse Illuminate\\Foundation\\Validation\\ValidatesRequests;\r\nuse Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests;\r\n\r\nclass ___MODEL___Controller extends BaseController\r\n{\r\n    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;\r\n}");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Foundation\\Bus\\DispatchesJobs;\nuse Illuminate\\Routing\\Controller as BaseController;\nuse Illuminate\\Foundation\\Validation\\ValidatesRequests;\nuse Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests;\n\nclass ___MODEL___Controller extends BaseController\n{\n    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;\n}");
 
 /***/ }),
 
@@ -245,7 +245,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nuse Illuminate\\Database\\Seeder;\r\n\r\nclass DatabaseSeeder extends Seeder\r\n{\r\n    /**\r\n     * Seed the application's database.\r\n     *\r\n     * @return void\r\n     */\r\n    public function run()\r\n    {\r\n        ___DATABASE_SEEDERS_BLOCK___\r\n    }\r\n}");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nuse Illuminate\\Database\\Seeder;\n\nclass DatabaseSeeder extends Seeder\n{\n    /**\n     * Seed the application's database.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        ___DATABASE_SEEDERS_BLOCK___\n    }\n}");
 
 /***/ }),
 
@@ -258,7 +258,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\n/** @var \\Illuminate\\Database\\Eloquent\\Factory $factory */\r\nuse ___MODEL_NAMESPACE___\\___MODEL___;\r\nuse Illuminate\\Support\\Str;\r\nuse Faker\\Generator as Faker;\r\nuse Carbon\\Carbon;\r\n\r\n/*\r\n|--------------------------------------------------------------------------\r\n| Model Factories\r\n|--------------------------------------------------------------------------\r\n|\r\n| This directory should contain each of the model factory definitions for\r\n| your application. Factories provide a convenient way to generate new\r\n| model instances for testing / seeding your application's database.\r\n|\r\n*/\r\n\r\n$factory->define(___MODEL___::class, function (Faker $faker) {\r\n    return [\r\n        ___COLUMNS_BLOCK___\r\n    ];\r\n});\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\n/** @var \\Illuminate\\Database\\Eloquent\\Factory $factory */\nuse ___MODEL_NAMESPACE___\\___MODEL___;\nuse Illuminate\\Support\\Str;\nuse Faker\\Generator as Faker;\nuse Carbon\\Carbon;\n\n/*\n|--------------------------------------------------------------------------\n| Model Factories\n|--------------------------------------------------------------------------\n|\n| This directory should contain each of the model factory definitions for\n| your application. Factories provide a convenient way to generate new\n| model instances for testing / seeding your application's database.\n|\n*/\n\n$factory->define(___MODEL___::class, function (Faker $faker) {\n    return [\n        ___COLUMNS_BLOCK___\n    ];\n});\n");
 
 /***/ }),
 
@@ -271,7 +271,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/**\r\n * Get the ___TARGET_CLASS_PLURAL___ for the ___THIS_CLASS___.\r\n */\r\npublic function ___METHOD_NAME___()\r\n{\r\n    return $this->hasMany(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\r\n}\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS_PLURAL___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->hasMany(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\n}\n");
 
 /***/ }),
 
@@ -284,7 +284,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/**\r\n * Get the ___TARGET_CLASS___ for the ___THIS_CLASS___.\r\n */\r\npublic function ___METHOD_NAME___()\r\n{\r\n    return $this->hasOne(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\r\n}\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("/**\n * Get the ___TARGET_CLASS___ for the ___THIS_CLASS___.\n */\npublic function ___METHOD_NAME___()\n{\n    return $this->hasOne(\\___MODEL_NAMESPACE___\\___TARGET_CLASS___::class);\n}\n");
 
 /***/ }),
 
@@ -297,7 +297,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nuse Illuminate\\Support\\Facades\\Schema;\r\nuse Illuminate\\Database\\Schema\\Blueprint;\r\nuse Illuminate\\Database\\Migrations\\Migration;\r\n\r\nclass ___CLASS_NAME___ extends Migration\r\n{\r\n    /**\r\n     * Run the migrations.\r\n     *\r\n     * @return void\r\n     */\r\n    public function up()\r\n    {\r\n        Schema::create('___TABLE___', function (Blueprint $table) {\r\n            ___COLUMNS_BLOCK___\r\n            ___SOFT_DELETES_BLOCK___\r\n        });\r\n    }\r\n\r\n    /**\r\n     * Reverse the migrations.\r\n     *\r\n     * @return void\r\n     */\r\n    public function down()\r\n    {\r\n        Schema::dropIfExists('___TABLE___');\r\n    }\r\n}\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nuse Illuminate\\Support\\Facades\\Schema;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Database\\Migrations\\Migration;\n\nclass ___CLASS_NAME___ extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('___TABLE___', function (Blueprint $table) {\n            ___COLUMNS_BLOCK___\n            ___SOFT_DELETES_BLOCK___\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('___TABLE___');\n    }\n}\n");
 
 /***/ }),
 
@@ -323,7 +323,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nuse App\\___MODEL___;\r\nuse Illuminate\\Database\\Seeder;\r\n\r\nclass ___MODEL___Seeder extends Seeder\r\n{\r\n    /**\r\n     * Run the database seeds.\r\n     *\r\n     * @return void\r\n     */\r\n    public function run()\r\n    {\r\n        factory(___MODEL___::class, 10)->create();\r\n    }\r\n}");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nuse App\\___MODEL___;\nuse Illuminate\\Database\\Seeder;\n\nclass ___MODEL___Seeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        factory(___MODEL___::class, 10)->create();\n    }\n}");
 
 /***/ }),
 
@@ -349,7 +349,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nuse Illuminate\\Http\\Request;\r\nuse Illuminate\\Routing\\Router;\r\n\r\n/*\r\n|--------------------------------------------------------------------------\r\n| API Routes\r\n|--------------------------------------------------------------------------\r\n|\r\n| Here is where you can register API routes for your application. These\r\n| routes are loaded by the RouteServiceProvider within a group which\r\n| is assigned the \"api\" middleware group. Enjoy building your API!\r\n|\r\n*/\r\n\r\n/*\r\n* Snippet for a quick route reference\r\n*/\r\nRoute::get('/', function (Router $router) {\r\n    return collect($router->getRoutes()->getRoutesByMethod()[\"GET\"])->map(function($value, $key) {\r\n        return url($key);\r\n    })->values();   \r\n});\r\n\r\n___API_ROUTES_BLOCK___");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Routing\\Router;\n\n/*\n|--------------------------------------------------------------------------\n| API Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register API routes for your application. These\n| routes are loaded by the RouteServiceProvider within a group which\n| is assigned the \"api\" middleware group. Enjoy building your API!\n|\n*/\n\n/*\n* Snippet for a quick route reference\n*/\nRoute::get('/', function (Router $router) {\n    return collect($router->getRoutes()->getRoutesByMethod()[\"GET\"])->map(function($value, $key) {\n        return url($key);\n    })->values();   \n});\n\n___API_ROUTES_BLOCK___");
 
 /***/ }),
 
@@ -394,7 +394,7 @@ module.exports = global["template"] = __webpack_require__(/*! -!./index.js */ ".
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\n/*\r\n|--------------------------------------------------------------------------\r\n| Web Routes\r\n|--------------------------------------------------------------------------\r\n|\r\n| Here is where you can register web routes for your application. These\r\n| routes are loaded by the RouteServiceProvider within a group which\r\n| contains the \"web\" middleware group. Now create something great!\r\n|\r\n\r\n*/\r\nRoute::get('/', function () {\r\n    return view('welcome');\r\n});\r\n\r\n___WEB_ROUTES_BLOCK___");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\n/*\n|--------------------------------------------------------------------------\n| Web Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register web routes for your application. These\n| routes are loaded by the RouteServiceProvider within a group which\n| contains the \"web\" middleware group. Now create something great!\n|\n\n*/\nRoute::get('/', function () {\n    return view('welcome');\n});\n\n___WEB_ROUTES_BLOCK___");
 
 /***/ }),
 
@@ -405,7 +405,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\laragon\www\laravel-file-factory\src\templates\index.js */"./src/templates/index.js-exposed");
+module.exports = __webpack_require__(/*! /Users/anders/Code/pipe-dream/laravel-file-factory/src/templates/index.js */"./src/templates/index.js-exposed");
 
 
 /***/ })

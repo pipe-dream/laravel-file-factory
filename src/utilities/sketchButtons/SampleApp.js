@@ -1,4 +1,4 @@
-import { SketchButton } from '@pipe-dream/core'
+import { SketchButton } from '@pipe-dream/core/dist/pipe-dream.js'
 import sampleAppSketch from '../../sketches/sampleAppSketch'
 
 export default class SampleAppSketchButton {
