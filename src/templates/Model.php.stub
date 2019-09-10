@@ -21,7 +21,7 @@ class ___CLASS_NAME___ extends Model
      *
      * @var array
      */
-    protected $dates = [___DATES___]
+    protected $dates = [___DATES___];
 
     /**
      * The attributes that should be hidden for arrays.
