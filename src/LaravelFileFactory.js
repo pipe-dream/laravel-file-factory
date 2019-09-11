@@ -24,15 +24,14 @@ import {BaseFileFactory} from '@pipe-dream/core'
 export default class LaravelFileFactory extends BaseFileFactory{
     constructor(objectModelCollection) {
         super(objectModelCollection)
-        this.omc = objectModelCollection
-    }
-
-    static get title() {
-        return "LaravelFileFactory"
     }
 
     static templates() {
         return templates
+    }
+
+    static get title(){
+        return "LaravelFileFactory"
     }
 
     static version() {
