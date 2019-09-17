@@ -1,0 +1,94 @@
+<?php
+
+namespace ___MODEL_NAMESPACE___\Policies;
+
+use ___MODEL_NAMESPACE___\User;
+use ___MODEL_NAMESPACE___\___MODEL___;
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class ___MODEL___Policy
+{
+    use HandlesAuthorization;
+
+    /**
+     * Determine whether the user can view any ___RESOURCE_NAME___.
+     *
+     * @param  ___MODEL_NAMESPACE___\User  $user
+     * @return bool
+     */
+    public function viewAny(User $user)
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can view the ___RESOURCE_NAME___.
+     *
+     * @param  ___MODEL_NAMESPACE___\User  $user
+     * @param  ___MODEL_NAMESPACE___\___MODEL___  $___RESOURCE_NAME___
+     * @return bool
+     */
+    public function view(User $user, ___MODEL___ $___RESOURCE_NAME___)
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can create a ___RESOURCE_NAME___.
+     *
+     * @param  ___MODEL_NAMESPACE___\User  $user
+     * @return bool
+     */
+    public function create(User $user)
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can update the ___RESOURCE_NAME___.
+     *
+     * @param  ___MODEL_NAMESPACE___\User  $user
+     * @param  ___MODEL_NAMESPACE___\___MODEL___  $___RESOURCE_NAME___
+     * @return bool
+     */
+    public function update(User $user, ___MODEL___ $___RESOURCE_NAME___)
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can delete the ___RESOURCE_NAME___.
+     *
+     * @param  ___MODEL_NAMESPACE___\User  $user
+     * @param  ___MODEL_NAMESPACE___\___MODEL___  $___RESOURCE_NAME___
+     * @return bool
+     */
+    public function delete(User $user, ___MODEL___ $___RESOURCE_NAME___)
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can restore the ___RESOURCE_NAME___.
+     *
+     * @param  ___MODEL_NAMESPACE___\User  $user
+     * @param  ___MODEL_NAMESPACE___\___MODEL___  $___RESOURCE_NAME___
+     * @return bool
+     */
+    public function restore(User $user, ___MODEL___ $___RESOURCE_NAME___)
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can permanently delete the ___RESOURCE_NAME___.
+     *
+     * @param  ___MODEL_NAMESPACE___\User  $user
+     * @param  ___MODEL_NAMESPACE___\___MODEL___  $___RESOURCE_NAME___
+     * @return bool
+     */
+    public function forceDelete(User $user, ___MODEL___ $___RESOURCE_NAME___)
+    {
+        return false;
+    }
+}

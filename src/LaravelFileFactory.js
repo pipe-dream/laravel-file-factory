@@ -18,6 +18,7 @@ import MigrationPipe from './pipes/MigrationPipe'
 import ModelPipe from './pipes/ModelPipe'
 import SeederPipe from './pipes/SeederPipe'
 import UserPipe from './pipes/UserPipe'
+import PolicyPipe from './pipes/PolicyPipe'
 
 export default class LaravelFileFactory {
     constructor(objectModelCollection) {
@@ -80,6 +81,7 @@ export default class LaravelFileFactory {
             ModelPipe,
             SeederPipe,
             UserPipe,
+            PolicyPipe,
         ]
     }
 
