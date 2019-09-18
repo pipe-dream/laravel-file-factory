@@ -20,17 +20,19 @@ import SeederPipe from './pipes/SeederPipe'
 import UserPipe from './pipes/UserPipe'
 import PolicyPipe from './pipes/PolicyPipe'
 
-export default class LaravelFileFactory {
-    constructor(objectModelCollection) {
-        this.omc = objectModelCollection
-    }
+import {BaseFileFactory} from '@pipe-dream/core'
 
-    static get title() {
-        return "LaravelFileFactory"
+export default class LaravelFileFactory extends BaseFileFactory{
+    constructor(objectModelCollection) {
+        super(objectModelCollection)
     }
 
     static templates() {
         return templates
+    }
+
+    static get title(){
+        return "LaravelFileFactory"
     }
 
     static version() {
@@ -54,7 +56,7 @@ export default class LaravelFileFactory {
                 name: "Model namespace",
                 value: "App",
                 dataType: String,
-            },            
+            },
             {
                 name: "API namespace",
                 value: String.raw`App\Http\Controllers\API`,
@@ -64,7 +66,7 @@ export default class LaravelFileFactory {
                 name: "API path",
                 value: String.raw`app/Http/Controllers/API`,
                 dataType: String,
-            }            
+            }
 
         ]
     }
@@ -91,22 +93,5 @@ export default class LaravelFileFactory {
 
     static userSystemSketch() {
         return userSystemSketch;
-    }    
-
-    static from(objectModelCollection) {
-        return new this(objectModelCollection)
-    }
-
-    withPipes(pipes) {
-        this.pipes = pipes
-        return this
-    }
-
-    calculateFiles() {
-        return collect(this.pipes.map(pipe => {
-            return pipe.with(this.omc).calculateFiles(this.omc)
-        }).reduce((pipeFileList, allFiles) => {
-            return allFiles.concat(pipeFileList)
-        }, [])).sortBy('path').toArray();
     }
 }
