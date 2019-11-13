@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use ___MODEL_NAMESPACE___\___MODEL___;
 use App\Http\Resources\___MODEL___Collection;
 use App\Http\Resources\___MODEL___Resource;
- 
+use Illuminate\Http\Request;
+
 class ___MODEL___APIController extends Controller
 {
     public function index()
@@ -34,6 +35,6 @@ class ___MODEL___APIController extends Controller
     {
         $___MODEL_INSTANCE___->delete();
 
-        return response()->json([], \Illuminate\Http\Response::HTTP_NO_CONTENT);
+        return response()->noContent();
     }
 }
