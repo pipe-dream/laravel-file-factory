@@ -11,12 +11,14 @@ export default class APIControllerPipe extends ModelPipe {
     calculateFiles(omc) {
         return omc.modelsIncludingUser().map(model => {
             return {
-                path: "app/Http/Controllers/" + model.className() + "APIController.php",
+                path: this.apiControllerPath() + "/" + model.className() + "APIController.php",
                 content: Template.for('APIController.php').replace({
                     ___MODEL___: model.className(),
                     ___MODEL_INSTANCE___: F.camelCase(model.className()),
                     ___LOAD_RELATIONSHIPS___: this.loadRelationships(model),
-                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),
+                    ___API_CONTROLLER_PATH___: this.apiControllerPath(),
+                    ___API_CONTROLLER_NAMESPACE___: this.apiControllerNamespace(),                                                            
                 })
             }
         })
