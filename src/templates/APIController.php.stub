@@ -6,6 +6,7 @@ use ___MODEL_NAMESPACE___\___MODEL___;
 use App\Http\Resources\___MODEL___Collection;
 use App\Http\Resources\___MODEL___Resource;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ___MODEL___APIController extends Controller
 {
