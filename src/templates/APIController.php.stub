@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ___API_CONTROLLER_NAMESPACE___;
 
 use ___MODEL_NAMESPACE___\___MODEL___;
 use App\Http\Resources\___MODEL___Collection;

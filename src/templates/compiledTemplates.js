@@ -117,6 +117,7 @@ var map = {
 	"./HasOneRelationship.stub": "./src/templates/HasOneRelationship.stub",
 	"./Migration.php.stub": "./src/templates/Migration.php.stub",
 	"./Model.php.stub": "./src/templates/Model.php.stub",
+	"./Policy.php.stub": "./src/templates/Policy.php.stub",
 	"./Seeder.php.stub": "./src/templates/Seeder.php.stub",
 	"./User.php.stub": "./src/templates/User.php.stub",
 	"./api.php.stub": "./src/templates/api.php.stub",
@@ -154,7 +155,7 @@ webpackContext.id = "./src/templates sync recursive \\.(stub)$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace App\\Http\\Controllers;\n\nuse ___MODEL_NAMESPACE___\\___MODEL___;\nuse App\\Http\\Resources\\___MODEL___Collection;\nuse App\\Http\\Resources\\___MODEL___Resource;\nuse Illuminate\\Http\\Request;\n\nclass ___MODEL___APIController extends Controller\n{\n    public function index()\n    {\n        return new ___MODEL___Collection(___MODEL___::paginate());\n    }\n \n    public function show(___MODEL___ $___MODEL_INSTANCE___)\n    {\n        return new ___MODEL___Resource($___MODEL_INSTANCE___->___LOAD_RELATIONSHIPS___);\n    }\n\n    public function store(Request $request)\n    {\n        return new ___MODEL___Resource(___MODEL___::create($request->all()));\n    }\n\n    public function update(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->update($request->all());\n\n        return new ___MODEL___Resource($___MODEL_INSTANCE___);\n    }\n\n    public function destroy(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->delete();\n\n        return response()->noContent();\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace ___API_CONTROLLER_NAMESPACE___;\n\nuse ___MODEL_NAMESPACE___\\___MODEL___;\nuse App\\Http\\Resources\\___MODEL___Collection;\nuse App\\Http\\Resources\\___MODEL___Resource;\nuse Illuminate\\Http\\Request;\n\nclass ___MODEL___APIController extends Controller\n{\n    public function index()\n    {\n        return new ___MODEL___Collection(___MODEL___::paginate());\n    }\n \n    public function show(___MODEL___ $___MODEL_INSTANCE___)\n    {\n        return new ___MODEL___Resource($___MODEL_INSTANCE___->___LOAD_RELATIONSHIPS___);\n    }\n\n    public function store(Request $request)\n    {\n        return new ___MODEL___Resource(___MODEL___::create($request->all()));\n    }\n\n    public function update(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->update($request->all());\n\n        return new ___MODEL___Resource($___MODEL_INSTANCE___);\n    }\n\n    public function destroy(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->delete();\n\n        return response()->noContent();\n    }\n}\n");
 
 /***/ }),
 
@@ -311,6 +312,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace ___MODEL_NAMESPACE___;\n\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass ___CLASS_NAME___ extends Model\n{\n    ___SOFT_DELETES_BLOCK___\n    /**\n     * The attributes that are mass assignable.\n     *\n     * @var array\n     */\n    protected $fillable = [\n        ___FILLABLE___\n    ];\n\n    /**\n     * The attributes that should be mutated to dates.\n     *\n     * @var array\n     */\n    protected $dates = [___DATES___];\n\n    /**\n     * The attributes that should be hidden for arrays.\n     *\n     * @var array\n     */\n    protected $hidden = [\n        ___HIDDEN___\n    ];\n\n    /**\n     * The attributes that should be cast to native types.\n     *\n     * @var array\n     */\n    protected $casts = [\n        ___CASTS_BLOCK___\n    ];\n\n    ___RELATIONSHIP_METHODS_BLOCK___\n}\n");
+
+/***/ }),
+
+/***/ "./src/templates/Policy.php.stub":
+/*!***************************************!*\
+  !*** ./src/templates/Policy.php.stub ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace ___MODEL_NAMESPACE___\\Policies;\n\nuse ___MODEL_NAMESPACE___\\User;\nuse ___MODEL_NAMESPACE___\\___MODEL___;\nuse Illuminate\\Auth\\Access\\HandlesAuthorization;\n\nclass ___MODEL___Policy\n{\n    use HandlesAuthorization;\n\n    /**\n     * Determine whether the user can view any ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @return bool\n     */\n    public function viewAny(User $user)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can view the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function view(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can create a ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @return bool\n     */\n    public function create(User $user)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can update the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function update(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can delete the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function delete(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can restore the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function restore(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can permanently delete the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function forceDelete(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n}\n");
 
 /***/ }),
 

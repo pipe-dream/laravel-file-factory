@@ -25,5 +25,13 @@ export default class BasePipe {
 
     modelNamespace() {
         return window.store.getters.settings['LaravelFileFactory']['Model namespace']['value']        
+    }
+    
+    apiControllerPath() {
+        return window.store.getters.settings['LaravelFileFactory']['API path']['value']        
+    }
+
+    apiControllerNamespace() {
+        return window.store.getters.settings['LaravelFileFactory']['API namespace']['value']        
     }    
 }
