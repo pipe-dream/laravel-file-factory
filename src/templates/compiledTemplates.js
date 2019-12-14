@@ -155,7 +155,7 @@ webpackContext.id = "./src/templates sync recursive \\.(stub)$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace ___API_CONTROLLER_NAMESPACE___;\n\nuse ___MODEL_NAMESPACE___\\___MODEL___;\nuse App\\Http\\Resources\\___MODEL___Collection;\nuse App\\Http\\Resources\\___MODEL___Resource;\nuse Illuminate\\Http\\Request;\n\nclass ___MODEL___APIController extends Controller\n{\n    public function index()\n    {\n        return new ___MODEL___Collection(___MODEL___::paginate());\n    }\n \n    public function show(___MODEL___ $___MODEL_INSTANCE___)\n    {\n        return new ___MODEL___Resource($___MODEL_INSTANCE___->___LOAD_RELATIONSHIPS___);\n    }\n\n    public function store(Request $request)\n    {\n        return new ___MODEL___Resource(___MODEL___::create($request->all()));\n    }\n\n    public function update(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->update($request->all());\n\n        return new ___MODEL___Resource($___MODEL_INSTANCE___);\n    }\n\n    public function destroy(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->delete();\n\n        return response()->noContent();\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace ___API_CONTROLLER_NAMESPACE___;\n\nuse ___MODEL_NAMESPACE___\\___MODEL___;\nuse App\\Http\\Resources\\___MODEL___Collection;\nuse App\\Http\\Resources\\___MODEL___Resource;\nuse Illuminate\\Http\\Request;\nuse App\\Http\\Controllers\\Controller;\n\nclass ___MODEL___APIController extends Controller\n{\n    public function index()\n    {\n        return new ___MODEL___Collection(___MODEL___::paginate());\n    }\n \n    public function show(___MODEL___ $___MODEL_INSTANCE___)\n    {\n        return new ___MODEL___Resource($___MODEL_INSTANCE___->___LOAD_RELATIONSHIPS___);\n    }\n\n    public function store(Request $request)\n    {\n        return new ___MODEL___Resource(___MODEL___::create($request->all()));\n    }\n\n    public function update(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->update($request->all());\n\n        return new ___MODEL___Resource($___MODEL_INSTANCE___);\n    }\n\n    public function destroy(Request $request, ___MODEL___ $___MODEL_INSTANCE___)\n    {\n        $___MODEL_INSTANCE___->delete();\n\n        return response()->noContent();\n    }\n}\n");
 
 /***/ }),
 
@@ -194,7 +194,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("Route::resource('___RESOURCE_NAME___', '___MODEL_NAME___APIController', [\n    'only' => ['index', 'show', 'store', 'update', 'destroy']\n]);");
+/* harmony default export */ __webpack_exports__["default"] = ("Route::resource('___RESOURCE_NAME___', '\\___API_CONTROLLER_NAMESPACE___\\___MODEL_NAME___APIController', [\n    'only' => ['index', 'show', 'store', 'update', 'destroy']\n]);");
 
 /***/ }),
 

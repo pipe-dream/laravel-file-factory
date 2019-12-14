@@ -22,7 +22,8 @@ export default class APIRoutesPipe extends BasePipe {
             return Template.for('APIRoute').replace({
                 ___RESOURCE_NAME___: F.camelCase(F.pluralize(model.className())),
                 ___MODEL_NAME___: model.className(),
-                ___MODEL_NAMESPACE___: this.modelNamespace(),                
+                ___MODEL_NAMESPACE___: this.modelNamespace(),
+                ___API_CONTROLLER_NAMESPACE___: this.apiControllerNamespace(),                
             })
         }).join(___DOUBLE_LINE_BREAK___)
     }
