@@ -194,7 +194,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("Route::resource('___RESOURCE_NAME___', '\\___API_CONTROLLER_NAMESPACE___\\___MODEL_NAME___APIController', [\n    'only' => ['index', 'show', 'store', 'update', 'destroy']\n]);");
+/* harmony default export */ __webpack_exports__["default"] = ("Route::apiResource('___RESOURCE_NAME___', '\\___API_CONTROLLER_NAMESPACE___\\___MODEL_NAME___APIController');");
 
 /***/ }),
 
