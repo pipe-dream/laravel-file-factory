@@ -17,6 +17,10 @@ export default class PolicyPipe extends ModelPipe {
 
     PolicyFiles() {
         return this.omc.modelsIncludingUser().map(model => {
+            let isUser = model.isUserEntity()
+            let namespaceBlock = ""
+            if(!isUser)
+                namespaceBlock = `use ${this.modelNamespace()}\\${model.className()};`
             return {
                 // Laravel can auto-discover policies as long as they are in a
                 // "Policies" directory directly beneath the directory housing
@@ -24,8 +28,9 @@ export default class PolicyPipe extends ModelPipe {
                 path: this.modelPath() + "/Policies/" + model.className() + "Policy.php",
                 content: Template.for('Policy.php').replace({
                     ___MODEL___: this.className(model),
+                    ___NAMESPACE_BLOCK___: namespaceBlock,
                     ___MODEL_NAMESPACE___: this.modelNamespace(),
-                    ___RESOURCE_NAME___: model.className() === this.className(model) ? "other"+F.pascalCase(model.className()) : F.camelCase(model.className()),
+                    ___RESOURCE_NAME___: model.className() === 'User' ? "other"+F.pascalCase(model.className()) : F.camelCase(model.className()),
                 })
             }
         })

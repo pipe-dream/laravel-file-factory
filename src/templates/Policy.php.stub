@@ -3,7 +3,7 @@
 namespace ___MODEL_NAMESPACE___\Policies;
 
 use ___MODEL_NAMESPACE___\User;
-use ___MODEL_NAMESPACE___\___MODEL___;
+___NAMESPACE_BLOCK___
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ___MODEL___Policy
