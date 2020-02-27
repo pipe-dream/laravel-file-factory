@@ -1,6 +1,6 @@
 import { Template } from '@pipe-dream/core/dist/pipe-dream.js'
 import BasePipe from './BasePipe'
-import F from '../utilities/Formatter.js'
+import {Formatter} from '@pipe-dream/core/dist/pipe-dream.js'
 
 export default class APIRoutesPipe extends BasePipe {
 
@@ -18,12 +18,12 @@ export default class APIRoutesPipe extends BasePipe {
     }
 
     apiRoutes() {
-        return this.omc.modelsIncludingUser().map(model => {
+        return this.omc.models().map(model => {
             return Template.for('APIRoute').replace({
-                ___RESOURCE_NAME___: F.camelCase(F.pluralize(model.className())),
+                ___RESOURCE_NAME___: Formatter.camelCase(Formatter.pluralize(model.className())),
                 ___MODEL_NAME___: model.className(),
                 ___MODEL_NAMESPACE___: this.modelNamespace(),
-                ___API_CONTROLLER_NAMESPACE___: this.apiControllerNamespace(),                
+                ___API_CONTROLLER_NAMESPACE___: this.apiControllerNamespace(),
             })
         }).join(___DOUBLE_LINE_BREAK___)
     }

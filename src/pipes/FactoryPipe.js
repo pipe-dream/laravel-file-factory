@@ -1,6 +1,6 @@
 import { Template } from '@pipe-dream/core/dist/pipe-dream.js'
 import ModelPipe from './ModelPipe'
-import F from '../utilities/Formatter'
+import {Formatter} from '@pipe-dream/core/dist/pipe-dream.js'
 
 export default class FactoryPipe extends ModelPipe {
 
@@ -15,13 +15,13 @@ export default class FactoryPipe extends ModelPipe {
     }
 
     factoryFiles() {
-        return this.omc.modelsIncludingUser().map(model => {
+        return this.omc.models().map(model => {
             return {
                 path: "database/factories/" + model.className() + "Factory.php",
                 content: Template.for('Factory.php').replace({
                     ___MODEL___: model.className(),
                     ___COLUMNS_BLOCK___: this.columnsBlock(model),
-                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),
                 })
             }
         })
@@ -31,7 +31,7 @@ export default class FactoryPipe extends ModelPipe {
         return model.attributes.filter(attribute => {
             return !['id', 'created_at', 'updated_at'].includes(attribute.properties.name)
         }).map(attribute => {
-            return F.singleQuotePad(attribute.properties.name) + " => " + this.seedStatement(attribute)
+            return Formatter.singleQuotePad(attribute.properties.name) + " => " + this.seedStatement(attribute)
         }).join(",\n")
     }
 
@@ -47,7 +47,7 @@ export default class FactoryPipe extends ModelPipe {
                 password: "'$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'", // password
                 remember_token: "Str::random(10)",
                 ... { /* add more common names here */ },
-                default: "$faker->sentence()"
+                default: "$faker->word()"
             },
             timestamp: {
                 email_verified_at: "now()",

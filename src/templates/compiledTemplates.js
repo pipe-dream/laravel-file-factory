@@ -324,7 +324,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nnamespace ___MODEL_NAMESPACE___\\Policies;\n\nuse ___MODEL_NAMESPACE___\\User;\n___NAMESPACE_BLOCK___\nuse Illuminate\\Auth\\Access\\HandlesAuthorization;\n\nclass ___MODEL___Policy\n{\n    use HandlesAuthorization;\n\n    /**\n     * Determine whether the user can view any ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @return bool\n     */\n    public function viewAny(User $user)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can view the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function view(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can create a ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @return bool\n     */\n    public function create(User $user)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can update the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function update(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can delete the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function delete(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can restore the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function restore(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n\n    /**\n     * Determine whether the user can permanently delete the ___RESOURCE_NAME___.\n     *\n     * @param  ___MODEL_NAMESPACE___\\User  $user\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\n     * @return bool\n     */\n    public function forceDelete(User $user, ___MODEL___ $___RESOURCE_NAME___)\n    {\n        return false;\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nnamespace ___MODEL_NAMESPACE___\\Policies;\r\n\r\nuse ___MODEL_NAMESPACE___\\User;\r\n___NAMESPACE_BLOCK___\r\nuse Illuminate\\Auth\\Access\\HandlesAuthorization;\r\n\r\nclass ___MODEL___Policy\r\n{\r\n    use HandlesAuthorization;\r\n\r\n    /**\r\n     * Determine whether the user can view any ___RESOURCE_NAME___.\r\n     *\r\n     * @param  ___MODEL_NAMESPACE___\\User  $user\r\n     * @return bool\r\n     */\r\n    public function viewAny(User $user)\r\n    {\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     * Determine whether the user can view the ___RESOURCE_NAME___.\r\n     *\r\n     * @param  ___MODEL_NAMESPACE___\\User  $user\r\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\r\n     * @return bool\r\n     */\r\n    public function view(User $user, ___MODEL___ $___RESOURCE_NAME___)\r\n    {\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     * Determine whether the user can create a ___RESOURCE_NAME___.\r\n     *\r\n     * @param  ___MODEL_NAMESPACE___\\User  $user\r\n     * @return bool\r\n     */\r\n    public function create(User $user)\r\n    {\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     * Determine whether the user can update the ___RESOURCE_NAME___.\r\n     *\r\n     * @param  ___MODEL_NAMESPACE___\\User  $user\r\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\r\n     * @return bool\r\n     */\r\n    public function update(User $user, ___MODEL___ $___RESOURCE_NAME___)\r\n    {\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     * Determine whether the user can delete the ___RESOURCE_NAME___.\r\n     *\r\n     * @param  ___MODEL_NAMESPACE___\\User  $user\r\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\r\n     * @return bool\r\n     */\r\n    public function delete(User $user, ___MODEL___ $___RESOURCE_NAME___)\r\n    {\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     * Determine whether the user can restore the ___RESOURCE_NAME___.\r\n     *\r\n     * @param  ___MODEL_NAMESPACE___\\User  $user\r\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\r\n     * @return bool\r\n     */\r\n    public function restore(User $user, ___MODEL___ $___RESOURCE_NAME___)\r\n    {\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     * Determine whether the user can permanently delete the ___RESOURCE_NAME___.\r\n     *\r\n     * @param  ___MODEL_NAMESPACE___\\User  $user\r\n     * @param  ___MODEL_NAMESPACE___\\___MODEL___  $___RESOURCE_NAME___\r\n     * @return bool\r\n     */\r\n    public function forceDelete(User $user, ___MODEL___ $___RESOURCE_NAME___)\r\n    {\r\n        return false;\r\n    }\r\n}\r\n");
 
 /***/ }),
 
@@ -371,20 +371,35 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./src/templates/index.js ***!
   \********************************/
-/*! exports provided: default */
+/*! exports provided: templateHash, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var context = __webpack_require__("./src/templates sync recursive \\.(stub)$");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templateHash", function() { return templateHash; });
+const context = __webpack_require__("./src/templates sync recursive \\.(stub)$");
 
-var templates = {};
+const templates = {};
+const hashMap = {}
 context.keys().forEach((filename)=>{
-  var fileKey = filename.substring(2, filename.length - 5)
+  const fileKey = filename.substring(2, filename.length - 5)
   templates[fileKey] = context(filename).default;
+    hashMap[fileKey] = hashCode(context(filename).default)
 });
 
+function hashCode (input) {
+    let hash = 0, i, chr;
+    if (input.length === 0) return hash;
+    for (i = 0; i < input.length; i++) {
+        chr   = input.charCodeAt(i);
+        hash  = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+};
+const templateHash = hashMap
 /* harmony default export */ __webpack_exports__["default"] = (templates);
+
 
 /***/ }),
 

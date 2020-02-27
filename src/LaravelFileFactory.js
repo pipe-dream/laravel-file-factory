@@ -50,24 +50,29 @@ export default class LaravelFileFactory extends BaseFileFactory{
             {
                 name: "Model path",
                 value: "app",
-                dataType: String,
+                dataType: "string",
             },
             {
                 name: "Model namespace",
                 value: "App",
-                dataType: String,
+                dataType: "string",
             },
             {
                 name: "API namespace",
                 value: String.raw`App\Http\Controllers\API`,
-                dataType: String,
+                dataType: "string",
             },
             {
                 name: "API path",
                 value: String.raw`app/Http/Controllers/API`,
-                dataType: String,
+                dataType: "string",
+            },
+            {
+                name: "Foreign Key restraints",
+                value: true,
+                dataType: "boolean",
+                help: "Enable foreign keys.\\nIf set to false the keys will still be generated, but you cannot set cascades etc."
             }
-
         ]
     }
 
