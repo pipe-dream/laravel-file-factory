@@ -14,12 +14,12 @@ export default class APIResourceCollectionPipe extends ModelPipe {
     }
 
     APIResourceFiles() {
-        return this.omc.modelsIncludingUser().map(model => {
+        return this.omc.models().map(model => {
             return {
                 path: "app/Http/Resources/" + model.className() + "Collection.php",
                 content: Template.for('APIResourceCollection.php').replace({
                     ___MODEL___: this.className(model),
-                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),
                 })
             }
         })

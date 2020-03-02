@@ -16,12 +16,12 @@ export default class SeederPipe extends ModelPipe {
     }
 
     seederFiles() {
-        return this.omc.modelsIncludingUser().map(model => {
+        return this.omc.models().map(model => {
             return {
                 path: "database/seeds/" + model.className() + "Seeder.php",
                 content: Template.for('Seeder.php').replace({
                     ___MODEL___: model.className(),
-                    ___MODEL_NAMESPACE___: this.modelNamespace(),                    
+                    ___MODEL_NAMESPACE___: this.modelNamespace(),
                 })
             }
         }).concat(

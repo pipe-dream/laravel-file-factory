@@ -1,6 +1,6 @@
-import { Template } from '@pipe-dream/core/dist/pipe-dream.js'
+import {Template} from '@pipe-dream/core'
 import BasePipe from './BasePipe'
-import F from '../utilities/Formatter'
+import {Formatter} from '@pipe-dream/core'
 
 export default class ModelPipe extends BasePipe {
 
@@ -97,11 +97,11 @@ export default class ModelPipe extends BasePipe {
 
     relationshipMethods(model) {
         return [
-            model.relationships.hasOne.map(target => {
+            (model.relationships.hasOne || []).map(target => {
                 return Template.for('HasOneRelationship').replace({
                     ___TARGET_CLASS___: target.className(),
                     ___THIS_CLASS___: model.className(),
-                    ___METHOD_NAME___: F.camelCase(
+                    ___METHOD_NAME___: Formatter.camelCase(
                         target.className()
                     ),
 
@@ -111,10 +111,10 @@ export default class ModelPipe extends BasePipe {
             model.relationships.hasMany.map(target => {
                 return Template.for('HasManyRelationship').replace({
                     ___TARGET_CLASS___: target.className(),
-                    ___TARGET_CLASS_PLURAL___: F.pluralize(target.className()),
+                    ___TARGET_CLASS_PLURAL___: Formatter.pluralize(target.className()),
                     ___THIS_CLASS___: model.className(),
-                    ___METHOD_NAME___: F.pluralize(
-                        F.camelCase(
+                    ___METHOD_NAME___: Formatter.pluralize(
+                        Formatter.camelCase(
                             target.className()
                         )
                     ),
@@ -126,17 +126,17 @@ export default class ModelPipe extends BasePipe {
                 return Template.for('BelongsToRelationship').replace({
                     ___TARGET_CLASS___: target.className(),
                     ___THIS_CLASS___: model.className(),
-                    ___METHOD_NAME___: F.camelCase(target.className()),
+                    ___METHOD_NAME___: Formatter.camelCase(target.className()),
                 })
             }).join(___DOUBLE_LINE_BREAK___),
 
             model.relationships.belongsToMany.map(target => {
                 return Template.for('BelongsToManyRelationship').replace({
                     ___TARGET_CLASS___: target.className(),
-                    ___TARGET_CLASS_PLURAL___: F.pluralize(target.className()),
+                    ___TARGET_CLASS_PLURAL___: Formatter.pluralize(target.className()),
                     ___THIS_CLASS___: model.className(),
-                    ___METHOD_NAME___: F.pluralize(
-                        F.camelCase(
+                    ___METHOD_NAME___: Formatter.pluralize(
+                        Formatter.camelCase(
                             target.className()
                         )
                     ),

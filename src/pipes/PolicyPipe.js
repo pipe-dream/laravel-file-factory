@@ -1,6 +1,6 @@
 import {Template} from '@pipe-dream/core/dist/pipe-dream.js'
 import ModelPipe from './ModelPipe';
-import F from '../utilities/Formatter'
+import {Formatter} from '@pipe-dream/core/dist/pipe-dream.js'
 
 
 export default class PolicyPipe extends ModelPipe {
@@ -16,7 +16,7 @@ export default class PolicyPipe extends ModelPipe {
     }
 
     PolicyFiles() {
-        return this.omc.modelsIncludingUser().map(model => {
+        return this.omc.models().map(model => {
             let isUser = model.isUserEntity()
             let namespaceBlock = ""
             if(!isUser)
@@ -30,7 +30,7 @@ export default class PolicyPipe extends ModelPipe {
                     ___MODEL___: this.className(model),
                     ___NAMESPACE_BLOCK___: namespaceBlock,
                     ___MODEL_NAMESPACE___: this.modelNamespace(),
-                    ___RESOURCE_NAME___: model.className() === 'User' ? "other"+F.pascalCase(model.className()) : F.camelCase(model.className()),
+                    ___RESOURCE_NAME___: model.className() === 'User' ? "other"+Formatter.pascalCase(model.className()) : Formatter.camelCase(model.className()),
                 })
             }
         })
