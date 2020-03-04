@@ -1,4 +1,4 @@
-import {Template, Formatter, Schema} from '@pipe-dream/core/dist/pipe-dream.js'
+import {Template, Formatter, Schema} from '@pipe-dream/core'
 import ModelPipe from './ModelPipe';
 
 export default class APIControllerPipe extends ModelPipe {
@@ -8,8 +8,7 @@ export default class APIControllerPipe extends ModelPipe {
     }
 
     calculateFiles(omc) {
-        console.log("Schema",Schema.models)
-        return Schema.models.map(model => {
+        return Schema.refresh().models.map(model => {
             return {
                 path: this.apiControllerPath() + "/" + model.className() + "APIController.php",
                 content: Template.for('APIController.php').replace({
