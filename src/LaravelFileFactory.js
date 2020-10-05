@@ -22,6 +22,9 @@ import PolicyPipe from './pipes/PolicyPipe'
 
 import {BaseFileFactory} from '@pipe-dream/core'
 
+import ImportAppButton from "./buttons/import";
+import ImportFromInformationSchemaButton from './buttons/importFromInformationSchema'
+
 export default class LaravelFileFactory extends BaseFileFactory{
     constructor(objectModelCollection) {
         super(objectModelCollection)
@@ -41,7 +44,9 @@ export default class LaravelFileFactory extends BaseFileFactory{
 
     static buttons() {
         return [
-            SampleAppSketchButton
+            SampleAppSketchButton,
+            ImportAppButton,
+            ImportFromInformationSchemaButton,
         ]
     }
 

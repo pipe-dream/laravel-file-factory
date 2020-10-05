@@ -337,7 +337,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<?php\r\n\r\nuse App\\___MODEL___;\r\nuse Illuminate\\Database\\Seeder;\r\n\r\nclass ___MODEL___Seeder extends Seeder\r\n{\r\n    /**\r\n     * Run the database seeds.\r\n     *\r\n     * @return void\r\n     */\r\n    public function run()\r\n    {\r\n        factory(___MODEL___::class, 10)->create();\r\n    }\r\n}");
+/* harmony default export */ __webpack_exports__["default"] = ("<?php\n\nuse App\\___MODEL___;\nuse Illuminate\\Database\\Seeder;\n\nclass ___MODEL___Seeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        factory(___MODEL___::class, 10)->create()___RELATION_SEEDER_BLOCK___;\n    }\n}\n");
 
 /***/ }),
 

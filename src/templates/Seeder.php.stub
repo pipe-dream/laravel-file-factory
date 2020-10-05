@@ -12,6 +12,6 @@ class ___MODEL___Seeder extends Seeder
      */
     public function run()
     {
-        factory(___MODEL___::class, 10)->create();
+        factory(___MODEL___::class, 10)->create()___RELATION_SEEDER_BLOCK___;
     }
 }
